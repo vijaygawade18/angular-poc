@@ -7,3 +7,6 @@ import 'angular-local-storage';
 // bootstrap
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap';
+
+// ui-draggable
+import 'angular-native-dragdrop'

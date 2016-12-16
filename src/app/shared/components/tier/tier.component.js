@@ -1,13 +1,5 @@
 'use strict';
 
-export const TierComponent = {
-  bindings: {
-    data: '<'
-  },
-  controller: TierComponentController,
-  template: require('./tier.component.html')
-}
-
 class TierComponentController {
   constructor() {
     this.tier = {
@@ -18,8 +10,24 @@ class TierComponentController {
   }
 
   $onInit() { 
-    this.tier = angular.copy(this.data, this.tier);
+    this.tier = this.data;
   }
+
+  $onChanges(simpleChange) { 
+    if (simpleChange[ 'data' ] && simpleChange[ 'data' ].currentValue) { 
+      this.tier = simpleChange[ 'data' ].currentValue;
+    }
+  }
+
+  onContainerDrop(evt) { }
 }
 
 TierComponentController.$inject = [];
+
+export const TierComponent = {
+  bindings: {
+    data: '<'
+  },
+  controller: TierComponentController,
+  template: require('./tier.component.html')
+}

@@ -4,18 +4,8 @@ require('./home.component.css');
 
 class HomeController {
 
-  constructor($scope) {
+  constructor() {
     this.tiers = [];
-
-    $scope.$on('event:addTier', () => {
-      this.addTier({
-        name: 'newTier',
-        containers: [ {
-          name: 'newContainer'
-        }],
-        ports: []
-      })
-    });
   }
 
   addTier(tier) {
@@ -26,9 +16,25 @@ class HomeController {
 
   }
 
+  onDrop(evt) {
+    this.addTier({
+      name: 'newTier',
+      containers: [ ],
+      ports: []
+    })
+  }
+
+  onTierDrop(evt, idx) { 
+    let prevObj = this.tiers[ idx ];
+    prevObj.containers.push({
+      name: 'new containers'
+    });
+
+    this.tiers[ idx ] = Object.assign({}, this.tiers[ idx ], prevObj);
+  }
 }
 
-HomeController.$inject = [ '$scope' ]
+HomeController.$inject = [];
 
 export const HomeComponent = {
   controller: HomeController,

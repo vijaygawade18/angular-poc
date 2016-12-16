@@ -47,6 +47,10 @@ angular-mocks@^1.5.8:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/angular-mocks/-/angular-mocks-1.6.0.tgz#690226486325006abc8f0c2477a6d21fd6212687"
 
+angular-native-dragdrop:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/angular-native-dragdrop/-/angular-native-dragdrop-1.2.2.tgz#d646c6b75b131c48073c3f6e36a225b2726d8bae"
+
 angular-route@^1.5.8:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.0.tgz#de9478d0a235991226a1876f29de2cb3fb5a0425"

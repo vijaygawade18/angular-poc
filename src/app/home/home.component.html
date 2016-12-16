@@ -2,16 +2,13 @@
   <left></left>
 </div>
 <div class="col-md-7 col-lg-7">
-  <div class="middle-section">
-    <div id="dropzone1" class="box-dashed" 
-    drop-zone drop-zone-width="auto" drop-zone-height="400"
-      drag-over-style="over">
-
-      <!-- repeat tiers -->
-      <tier 
-      data="tier"
-      ng-repeat="tier in $ctrl.tiers"></tier>
-    </div>
+  <div class="middle-section" ui-on-drop="$ctrl.onDrop($event);" drop-channel="main">
+    <!-- repeat tiers -->
+    <tier 
+       ui-on-drop="$ctrl.onTierDrop($event, $index);"
+      drop-channel="tier"
+      data="tier" 
+     ng-repeat="tier in $ctrl.tiers;"></tier>
   </div>
 </div>
 <div class="col-md-3 col-lg-3">

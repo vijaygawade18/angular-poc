@@ -13,6 +13,7 @@ import { HomeModule } from './home';
 
 const SHARED_MODULES = [
   'ngComponentRouter',
+  'ang-drag-drop',
   ngAnimate,
   HomeModule,
   SHARED_DIRECTIVES,
