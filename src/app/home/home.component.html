@@ -2,10 +2,13 @@
   <left></left>
 </div>
 <div class="col-md-7 col-lg-7">
-  <div class="middle-section" ui-on-drop="$ctrl.onDrop($event);" drop-channel="main">
+  <div class="middle-section" 
+  drag-hover-class="animate-on-hover"
+  ui-on-drop="$ctrl.onDrop($event);" drop-channel="main">
     <!-- repeat tiers -->
     <tier 
-       ui-on-drop="$ctrl.onTierDrop($event, $index);"
+      drag-hover-class="animate-on-tier-hover"
+      ui-on-drop="$ctrl.onTierDrop($event, $index);"
       drop-channel="tier"
       data="tier" 
      ng-repeat="tier in $ctrl.tiers;"></tier>

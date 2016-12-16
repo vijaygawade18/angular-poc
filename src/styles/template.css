@@ -67,3 +67,8 @@ nav a.active{
   border: 1px solid gray;
   min-height: 635px;
 }
+
+.animate-on-hover{
+  transition: all 1s ease-in-out;
+  transform: scale(1.1);
+}
