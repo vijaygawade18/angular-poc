@@ -1,11 +1,8 @@
-import angular from 'angular';
+'use strict';
 
-export const homeComponent  = {
-  template: require('./home.component.html'),
-  controller: HomeComponentController
-}
+require('./home.component.css');
 
-class HomeComponentController {
-  constructor() {
-  }
+export const HomeComponent = {
+  controller: () => { },
+  template: require('./home.component.html')
 }

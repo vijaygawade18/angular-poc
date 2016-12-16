@@ -5,6 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
+var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), CopyWebpackPlugin.default || CopyWebpackPlugin);
+
 const chalk = require('chalk');
 const autoprefixer = require('autoprefixer');
 
@@ -29,7 +31,7 @@ module.exports = {
   metadata: METADATA,
   postcss: [ autoprefixer ],
   entry: {
-    // 'polyfills': './src/polyfills.ts',
+    'polyfills': './src/polyfills.js',
     'vendor': './src/vendor.js',
     'app': './src/main.js'
   },
@@ -57,8 +59,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file?hash=sha512&digest=hex&name=[hash].[ext]'
         ]
       },
       {
@@ -68,8 +69,6 @@ module.exports = {
       },
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'file-loader' },
 
-      // Bootstrap 4
-      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
       { test: /\.css$/, loader: 'style-loader!css-loader' }
     ]
   },
@@ -93,6 +92,17 @@ module.exports = {
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer'
     }),
+
+    new CopyWebpackPlugin([
+      {
+        from: helpers.root('node_modules', 'bootstrap/dist/css/bootstrap.min.css'),
+        to: helpers.root('build', 'css/bootstrap.min.css')
+      },
+      {
+        from: helpers.root('src', 'styles/template.css'),
+        to: helpers.root('build', 'css/template.css')
+      }
+    ]),
 
     new ProgressBarPlugin({
       format: '  build ' + chalk.blue.bold(':bar') + chalk.green.bold(':percent') + ' (:elapsed seconds)',
