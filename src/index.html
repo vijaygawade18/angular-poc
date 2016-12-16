@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= webpackConfig.metadata.title %>
+  </title>
+  <meta name="description" content="<%= webpackConfig.metadata.title %>">
+  <base href="<%= webpackConfig.metadata.baseUrl %>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+</head>
+
+<body>
+   <app></app>
+
+  <script>
+    window.apiServer = '<%= webpackConfig.metadata.apiServer %>';
+    window.MODULE_NAME = '<%= webpackConfig.metadata.moduleName %>';
+  </script>
+
+</body>
+
+</html>
