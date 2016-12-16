@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import ngAnimate from 'angular-animate';
 
 import { SHARED_DIRECTIVES } from './shared/directives'
+import { SHARED_COMPONENTS } from './shared/components'
 
 import routing from './app.config'
 
@@ -14,7 +15,8 @@ const SHARED_MODULES = [
   'ngComponentRouter',
   ngAnimate,
   HomeModule,
-  SHARED_DIRECTIVES
+  SHARED_DIRECTIVES,
+  SHARED_COMPONENTS
 ];
 
 export default angular

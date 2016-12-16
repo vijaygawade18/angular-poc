@@ -1,8 +1,8 @@
 'use strict';
 
-dropZone.$inject = [ 'draggableFactory', '$compile' ];
+dropZone.$inject = [ 'draggableFactory', '$compile', '$rootScope' ];
 
-export function dropZone(draggableFactory, $compile) {
+export function dropZone(draggableFactory, $compile, $rootScope) {
   var directive = {
     restrict: 'A',
     controller: dropZoneCtrl,
@@ -112,10 +112,7 @@ export function dropZone(draggableFactory, $compile) {
           scope.$evalAsync(function () {
             //element.append(draggableFactory.clonedElement);
             if (itemType === "tier") {
-              element.append(creteItem(itemType));
-            }
-            else {
-              element.children(".tier-type").append(creteItem(itemType));
+              $rootScope.$broadcast('event:addTier', itemType)
             }
           });
         }

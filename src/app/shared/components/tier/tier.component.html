@@ -1,0 +1,11 @@
+<div class="panel panel-default" drop-zone drag-over-style="over">
+  <div class="panel-heading">
+    <h4 class="panel-title">{{$ctrl.tier}}</h4>
+  </div>
+  <div class="panel-body">
+    <!-- repeat containers -->
+    <div ng-repeat="container in $ctrl.tier.containers">
+      <h5>{{conatiner.name}}</h5>
+    </div>
+  </div>
+</div>
