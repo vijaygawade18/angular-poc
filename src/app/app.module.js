@@ -1,6 +1,4 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
-import ngAnimate from 'angular-animate';
 
 import { SHARED_DIRECTIVES } from './shared/directives'
 import { SHARED_COMPONENTS } from './shared/components'
@@ -14,7 +12,7 @@ import { HomeModule } from './home';
 const SHARED_MODULES = [
   'ngComponentRouter',
   'ang-drag-drop',
-  ngAnimate,
+  'ngAnimate',
   HomeModule,
   SHARED_DIRECTIVES,
   SHARED_COMPONENTS

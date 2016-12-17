@@ -2,6 +2,7 @@
 
 class TierComponentController {
   constructor() {
+    this.showInformation = false;
     this.tier = {
       name: 'newTier',
       containers: [],
@@ -18,15 +19,14 @@ class TierComponentController {
       this.tier = simpleChange[ 'data' ].currentValue;
     }
   }
-
-  onContainerDrop(evt) { }
 }
 
 TierComponentController.$inject = [];
 
 export const TierComponent = {
   bindings: {
-    data: '<'
+    data: '<',
+    tierIndex: '@'
   },
   controller: TierComponentController,
   template: require('./tier.component.html')

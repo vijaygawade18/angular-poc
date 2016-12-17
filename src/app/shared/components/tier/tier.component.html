@@ -1,11 +1,14 @@
-<div class="panel panel-default">
+<div class="panel panel-default template-animation" ng-click="$ctrl.showInformation = !$ctrl.showInformation;">
   <div class="panel-heading">
-    <h4 class="panel-title">{{$ctrl.tier.name}}</h4>
+    <h4 class="panel-title">{{$ctrl.tierIndex}}   {{$ctrl.tier.name}}</h4>
   </div>
   <div class="panel-body">
     <!-- repeat containers -->
-    <div ui-on-drop="$ctrl.onContainerDrop($event)" drop-channel="container" ng-repeat="container in $ctrl.tier.containers">
-      <h5>{{container.name}}</h5>
-    </div>
+    <container data="container" 
+      class="fade"
+      ng-repeat="container in $ctrl.tier.containers">
+    </container>
   </div>
 </div>
+
+<right ng-show="$ctrl.showInformation" class="animate-show"></right>

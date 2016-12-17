@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-9" ui-on-drop="$ctrl.onContainerImageDrop($event)" drop-channel="containerImage">
+        <div class="well" ng-if="!$ctrl.container.image">No image found</div>
+        <img class="img img-circle" ng-if="$ctrl.container.image" ng-src="$ctrl.container.image" />
+      </div>
+      <div class="col-md-3"
+      ui-on-drop="$ctrl.onContainerVolumeDrop($event)" drop-channel="containerVolume">
+        <div class="well" ng-if="$ctrl.container.volumes.length">
+          {{$ctrl.container.volumes.length}}
+        </div>
+        <div class="well" ng-if="$ctrl.container.volumes.length == 0">
+          No volume found
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

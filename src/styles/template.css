@@ -68,7 +68,50 @@ nav a.active{
   min-height: 635px;
 }
 
-.animate-on-hover{
-  transition: all 1s ease-in-out;
-  transform: scale(1.1);
+/* Animation of ngAnimate */
+.template-animation {
+  transition: all linear 0.5s;
+}
+.right-panel {
+  position: fixed;
+  top: 10px;
+  right: -2px;
+}
+.animate-show {
+  -moz-transition:all linear 1s;
+  -o-transition:all linear 1s;
+  transition:all linear 1s;
+  display:block!important;
+  -webkit-transition:all linear 1s;
+  transition:all linear 1s;
+  opacity:1;
+}
+ 
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display:block!important;
+}
+ 
+.animate-show.ng-hide {
+  opacity:0;
+}
+tier {
+  transition: 1s linear all;
+  -webkit-transition:all linear 1s;
+}
+
+tier.ng-enter {
+  opacity: 0;
+}
+
+tier.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+tier.ng-leave {
+  opacity: 1;
+}
+
+tier.ng-leave.ng-leave-active {
+  opacity: 0;
 }

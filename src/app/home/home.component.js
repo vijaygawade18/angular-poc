@@ -19,15 +19,17 @@ class HomeController {
   onDrop(evt) {
     this.addTier({
       name: 'newTier',
-      containers: [ ],
+      containers: [],
       ports: []
     })
   }
 
-  onTierDrop(evt, idx) { 
+  onContainerDrop(evt, idx) {
     let prevObj = this.tiers[ idx ];
     prevObj.containers.push({
-      name: 'new containers'
+      name: 'new containers',
+      image: '',
+      volumes: []
     });
 
     this.tiers[ idx ] = Object.assign({}, this.tiers[ idx ], prevObj);
