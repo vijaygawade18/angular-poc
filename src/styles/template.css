@@ -73,9 +73,14 @@ nav a.active{
   transition: all linear 0.5s;
 }
 .right-panel {
-  position: fixed;
-  top: 10px;
-  right: -2px;
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    height: 100%;
+    min-width: 300px;
+    width: 30%;
+    background-color: #f3f3f3;
+    min-height: 200px;
 }
 .animate-show {
   -moz-transition:all linear 1s;
@@ -95,23 +100,23 @@ nav a.active{
 .animate-show.ng-hide {
   opacity:0;
 }
-tier {
+.tier {
   transition: 1s linear all;
   -webkit-transition:all linear 1s;
 }
 
-tier.ng-enter {
+.tier.ng-enter {
   opacity: 0;
 }
 
-tier.ng-enter.ng-enter-active {
+.tier.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-tier.ng-leave {
+.tier.ng-leave {
   opacity: 1;
 }
 
-tier.ng-leave.ng-leave-active {
+.tier.ng-leave.ng-leave-active {
   opacity: 0;
 }

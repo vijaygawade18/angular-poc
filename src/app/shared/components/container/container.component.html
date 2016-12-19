@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default" ng-click="$ctrl.showDetails($event);">
   <div class="panel-body">
 
     <div class="row">
@@ -8,7 +8,7 @@
       </div>
       <div class="col-md-3"
       ui-on-drop="$ctrl.onContainerVolumeDrop($event)" drop-channel="containerVolume">
-        <div class="well" ng-if="$ctrl.container.volumes.length">
+        <div class="well" ng-if="$ctrl.container.volumes.length" ng-click="$ctrl.showVolumeDetails($event);">
           {{$ctrl.container.volumes.length}}
         </div>
         <div class="well" ng-if="$ctrl.container.volumes.length == 0">

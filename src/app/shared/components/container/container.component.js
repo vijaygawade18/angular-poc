@@ -1,12 +1,20 @@
 'use strict';
 
 class ContainerComponentController {
-  constructor() {
+  constructor($scope) {
+    this.scope = $scope;
+
+    this.isDetailsPanelVisible = false;
+
     this.container = {
       name: 'newContainer',
       image: '',
       volumes: []
     }
+
+    $scope.$on('event:showInfoUpdated', (evt, data) => { 
+      this.container = Object.assign({}, this.container, data);
+    })
   }
 
   $onInit() { 
@@ -32,9 +40,33 @@ class ContainerComponentController {
     
     this.container = Object.assign({}, this.container, prevContainer);
   }
+
+  showDetails(evt) {
+    evt.preventDefault();
+
+    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
+
+    this.scope.$emit('event:showInfo', {
+      type: 'container',
+      data: this.container,
+      isVisible: this.isDetailsPanelVisible
+    })
+  }
+
+  showVolumeDetails(evt) {
+    evt.preventDefault();
+
+    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
+
+    this.scope.$emit('event:showInfo', {
+      type: 'volume',
+      data: this.container.volumes,
+      isVisible: this.isDetailsPanelVisible
+    })
+  }
 }
 
-ContainerComponentController.$inject = [];
+ContainerComponentController.$inject = ['$scope'];
 
 export const ContainerComponent = {
   bindings: {
