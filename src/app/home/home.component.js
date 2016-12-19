@@ -16,7 +16,7 @@ class HomeController {
 
   }
 
-  onDrop(evt) {
+  onDropOverMainContent(evt, data) {
     this.addTier({
       name: 'newTier',
       containers: [],
@@ -24,14 +24,21 @@ class HomeController {
     })
   }
 
-  onContainerDrop(evt, idx) {
+  onDropOverTier(evt, data) {
     let prevObj = this.tiers[ idx ];
-    prevObj.containers.push({
-      name: 'new containers',
-      image: '',
-      volumes: []
-    });
-
+    
+    if (data == 'container') {
+      prevObj.containers.push({
+        name: 'new containers',
+        image: '',
+        volumes: [],
+        ports: []
+      });
+    } else {
+      prevObj.ports.push({
+        name: 'new containers'
+      });
+    }
     this.tiers[ idx ] = Object.assign({}, this.tiers[ idx ], prevObj);
   }
 }

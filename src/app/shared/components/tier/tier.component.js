@@ -2,7 +2,7 @@
 
 class TierComponentController {
   constructor($scope) {
-    
+
     this.isDetailsPanelVisible = false;
     this.scope = $scope;
 
@@ -12,22 +12,35 @@ class TierComponentController {
       ports: []
     }
 
-    $scope.$on('event:showInfoUpdated', (evt, data) => { 
+    $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.tier = Object.assign({}, this.tier, data);
     })
   }
 
-  $onInit() { 
+  $onInit() {
     this.tier = this.data;
   }
 
-  $onChanges(simpleChange) { 
-    if (simpleChange[ 'data' ] && simpleChange[ 'data' ].currentValue) { 
-      this.tier = simpleChange[ 'data' ].currentValue;
+  onDropOverTier(evt, data) {
+    let prevObj = this.tier;
+
+    if (data == 'container') {
+      prevObj.containers.push({
+        name: 'new container',
+        image: '',
+        volumes: [],
+        ports: []
+      });
+    } else {
+      prevObj.ports.push({
+        name: `new ${data}`,
+        type: data.indexOf('ext') > -1 ? 'ext' : 'int'
+      });
     }
+    this.tier = Object.assign({}, this.tier, prevObj);
   }
 
-  showDetails() { 
+  showDetails() {
     this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
 
     this.scope.$emit('event:showInfo', {
@@ -37,13 +50,12 @@ class TierComponentController {
     })
   }
 
-  onPostInformationUpdate() { 
+  onPostInformationUpdate() {
 
   }
-
 }
 
-TierComponentController.$inject = ['$scope'];
+TierComponentController.$inject = [ '$scope' ];
 
 export const TierComponent = {
   bindings: {

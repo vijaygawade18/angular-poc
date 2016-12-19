@@ -1,62 +1,59 @@
 <div class="left-panel">
-    <div class="row">
-        <div class="col-md-12 col-lg-12 panel" 
-        ui-draggable="true" 
-        drag="tier" 
-        drag-channel="main">
-            Add Tier
-        </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 panel" ui-draggable="true" drag="'tier'" drag-channel="tier">
+      Add Tier
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel" ui-draggable="true" drag="container"
-        drag-channel="tier">
-            Container
-        </div>
-        <div class="col-md-6 col-lg-6 panel" ui-draggable="true" drag="volume"
-        drag-channel="containerVolume">
-            Volume
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel" ui-draggable="true" drag="'container'" drag-channel="container">
+      Container
     </div>
-    <div class="row">
-        <div class="col-md-12 col-lg-12 panel">
-            Virtual Machine
-        </div>
+    <div class="col-md-6 col-lg-6 panel" ui-draggable="true" drag="'volume'" drag-channel="volume">
+      Volume
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel">
-            Extservice
-        </div>
-        <div class="col-md-6 col-lg-6 panel">
-            Internal
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 panel">
+      Virtual Machine
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel">
-            Data
-        </div>
-        <div class="col-md-6 col-lg-6 panel">
-            Performance
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel" ui-draggable="true" 
+    drag="'extPort'" drag-channel="port">
+      Extservice
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel">
-            Available
-        </div>
-        <div class="col-md-6 col-lg-6 panel">
-            Resource
-        </div>
+    <div class="col-md-6 col-lg-6 panel" ui-draggable="true" 
+    drag="'intPort'" drag-channel="port">
+      Internal
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel">
-            Placement
-        </div>
-        <div class="col-md-6 col-lg-6 panel">
-            External
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel">
+      Data
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel">
-            New
-        </div>
+    <div class="col-md-6 col-lg-6 panel">
+      Performance
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel">
+      Available
+    </div>
+    <div class="col-md-6 col-lg-6 panel">
+      Resource
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel">
+      Placement
+    </div>
+    <div class="col-md-6 col-lg-6 panel">
+      External
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 panel">
+      New
+    </div>
+  </div>
 </div>

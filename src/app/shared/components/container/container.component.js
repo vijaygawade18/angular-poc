@@ -9,35 +9,44 @@ class ContainerComponentController {
     this.container = {
       name: 'newContainer',
       image: '',
-      volumes: []
+      volumes: [],
+      ports: []
     }
 
-    $scope.$on('event:showInfoUpdated', (evt, data) => { 
+    $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.container = Object.assign({}, this.container, data);
     })
   }
 
-  $onInit() { 
+  $onInit() {
     this.container = this.data;
   }
 
-  $onChanges(simpleChange) { 
-    if (simpleChange[ 'data' ] && simpleChange[ 'data' ].currentValue) { 
+  $onChanges(simpleChange) {
+    if (simpleChange[ 'data' ] && simpleChange[ 'data' ].currentValue) {
       this.container = simpleChange[ 'data' ].currentValue;
     }
   }
 
-  onContainerImageDrop(evt, index) { 
-    this.container.image = '';
-  }
+  onDropOverContainer(evt, data) {
 
-  onContainerVolumeDrop(evt, index) { 
     let prevContainer = this.container;
-    prevContainer.volumes.push({
-      name: '',
-      image: ''
-    });
-    
+
+    if (data == 'volume') {
+      prevContainer.volumes.push({
+        name: 'new volume',
+        image: ''
+      })
+    }
+    else if (data == 'image') {
+      prevContainer.image = '';
+    } else {
+      prevContainer.ports.push({
+        name: `new ${data}`,
+        type: data.indexOf('ext') > -1 ? 'ext' : 'int'
+      })
+    }
+
     this.container = Object.assign({}, this.container, prevContainer);
   }
 
@@ -66,7 +75,7 @@ class ContainerComponentController {
   }
 }
 
-ContainerComponentController.$inject = ['$scope'];
+ContainerComponentController.$inject = [ '$scope' ];
 
 export const ContainerComponent = {
   bindings: {

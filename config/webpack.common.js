@@ -101,6 +101,10 @@ module.exports = {
       {
         from: helpers.root('src', 'styles/template.css'),
         to: helpers.root('build', 'css/template.css')
+      },
+      {
+        from: helpers.root('src', 'resources'),
+        to: helpers.root('build', 'resources')
       }
     ]),
 
