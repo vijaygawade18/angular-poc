@@ -18,28 +18,12 @@ class HomeController {
 
   onDropOverMainContent(evt, data) {
     this.addTier({
-      name: 'newTier',
+      name: 'new Tier at home',
+      type: 'app type',
+      replica: 1,
       containers: [],
       ports: []
     })
-  }
-
-  onDropOverTier(evt, data) {
-    let prevObj = this.tiers[ idx ];
-    
-    if (data == 'container') {
-      prevObj.containers.push({
-        name: 'new containers',
-        image: '',
-        volumes: [],
-        ports: []
-      });
-    } else {
-      prevObj.ports.push({
-        name: 'new containers'
-      });
-    }
-    this.tiers[ idx ] = Object.assign({}, this.tiers[ idx ], prevObj);
   }
 }
 

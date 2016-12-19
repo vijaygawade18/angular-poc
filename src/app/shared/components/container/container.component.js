@@ -35,6 +35,9 @@ class ContainerComponentController {
     if (data == 'volume') {
       prevContainer.volumes.push({
         name: 'new volume',
+        readonly: false,
+        minsize: 0,
+        maxsize:10,
         image: ''
       })
     }
@@ -50,28 +53,22 @@ class ContainerComponentController {
     this.container = Object.assign({}, this.container, prevContainer);
   }
 
-  showDetails(evt) {
-    evt.preventDefault();
-
-    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
-
-    this.scope.$emit('event:showInfo', {
-      type: 'container',
-      data: this.container,
-      isVisible: this.isDetailsPanelVisible
-    })
-  }
 
   showVolumeDetails(evt) {
     evt.preventDefault();
 
-    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
+    this.isDetailsPanelVisible = true;
 
     this.scope.$emit('event:showInfo', {
       type: 'volume',
       data: this.container.volumes,
       isVisible: this.isDetailsPanelVisible
     })
+    evt.stopPropagation();
+  }
+
+  showPortDetails(evt) {
+    console.log("port not working");
   }
 }
 

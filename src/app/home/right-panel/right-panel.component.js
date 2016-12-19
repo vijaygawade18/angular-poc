@@ -5,14 +5,13 @@
 class RightPanelController {
 
   constructor($rootScope) {
-    this.isVisible = false;
+    this.isVisible = true;
 
     this.currentTpl = '';
     this.templateData = '';
 
     $rootScope.$on('event:showInfo', (evt, args) => {
       let { type, data, isVisible } = args;
-      
       this.isVisible = isVisible;
       if (!this.isVisible) return;
 
@@ -21,9 +20,9 @@ class RightPanelController {
     });
   }
 
-  getTemplateByType(type) { 
+  getTemplateByType(type) {
     let template = '';
-    switch (type) { 
+    switch (type) {
       case 'tier':
         template = 'tier-info.html'
         break;

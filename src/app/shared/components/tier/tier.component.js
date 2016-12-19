@@ -41,13 +41,24 @@ class TierComponentController {
   }
 
   showDetails() {
-    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
-
+    this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'tier',
       data: this.tier,
       isVisible: this.isDetailsPanelVisible
     })
+  }
+
+  showContainerDetails(evt) {
+    evt.preventDefault();
+    this.isDetailsPanelVisible = true;
+    this.scope.$emit('event:showInfo', {
+      type: 'container',
+      data: this.tier.containers,
+      isVisible: this.isDetailsPanelVisible
+    })
+
+    evt.stopPropagation();
   }
 
   onPostInformationUpdate() {
