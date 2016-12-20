@@ -1,4 +1,4 @@
-<div class="right-panel" ng-show="$ctrl.isVisible">
+<div class="right-panel">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -9,11 +9,9 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="info">
-
-        <div class="row">
-          <div class="col-md-12" ng-include src="$ctrl.currentTpl"></div>
-        </div>
-
+      <div class="row">
+        <div class="col-md-12" ng-include src="$ctrl.currentTpl"></div>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="yaml">YAML</div>
   </div>
@@ -91,3 +89,4 @@ Tier Details<br />
 </div>
 
 </script>
+

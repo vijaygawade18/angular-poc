@@ -1,7 +1,6 @@
 <div class="panel panel-default" ui-on-drop="$ctrl.onDropOverContainer($event, $data)"
   drop-channel="image, volume, port">
   <div class="panel-body">
-
     <div class="row">
       <div class="col-md-9 clearfix">
         <div class="well" ng-if="!$ctrl.container.image">No image found</div>
@@ -19,7 +18,8 @@
     <div class="clearfix"></div>
     <div class="row">
       <div class="col-md-12 clearfix">
-        <port class="well" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"  ng-click="$ctrl.showPortDetails($event)">
+        <port class="well" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"
+          ng-click="$ctrl.showPortDetails($event)">
         </port>
         <div class="well" ng-if="$ctrl.container.ports.length == 0">
           No ports found

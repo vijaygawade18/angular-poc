@@ -1,31 +1,45 @@
-.marTop10{
+body {
+  background-image: url('/images/bg.png');
+  background-size: 100% 100%;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.marTop10 {
   margin-top: 10px;
 }
-.marTop20{
+
+.marTop20 {
   margin-top: 20px;
 }
-.marTop30{
+
+.marTop30 {
   margin-top: 30px;
 }
 
-.box-dashed{
+.box-dashed {
   background-color: #ededed;
   border: 2px dashed #cccccc;
 }
-.box-dashed.over{
-  border:3px dashed #ff0000;
+
+.box-dashed.over {
+  border: 3px dashed #ff0000;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   transition: 0.75s all;
   background-color: #cccccc;
 }
-.tier-type{
+
+.tier-type {
   min-width: 150px;
   min-height: 200px;
   border: 2px solid #cccccc;
   background-color: #ffffff;
   display: inline-block;
 }
-.container-type{
+
+.container-type {
   width: 120px;
   height: 80px;
   border-radius: 10px;
@@ -34,7 +48,7 @@
   display: inline-block;
 }
 
-.volume-type{
+.volume-type {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -43,64 +57,276 @@
   display: inline-block;
 }
 
+
 /* Navigation css */
-nav{
-  padding-top:10px ;
+
+nav {
+  padding-top: 10px;
 }
-nav a{
+
+nav a {
   text-decoration: none;
 }
-nav a.active{
+
+nav a.active {
   color: #000;
   text-decoration: underline;
 }
 
+
 /* Left panel css */
-.left-panel .panel{
-  border:1px solid gray;
+
+.left-panel .panel {
+  border: 1px solid gray;
   text-align: center;
   padding: 20px;
+  background: transparent;
+  margin-bottom: 2px;
 }
+
+.left-panel .panel .sub-panel {
+  text-align: center;
+  background: transparent;
+}
+
+.left-panel .panel .panel-header {
+  text-align: left;
+}
+
+.left-panel .panel .panel-header label {
+  font-size: 14px;
+  padding: 0;
+  padding-bottom: 15px;
+}
+
+.left-panel .panel label {
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 10px 0;
+}
+
+.left-panel .panel .add-tier-icon {
+  width: 38px;
+  height: 40px;
+  background-image: url('/images/add-tier.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .container-icon {
+  width: 38px;
+  height: 40px;
+  background-image: url('/images/add-tier.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .volume-icon {
+  width: 32px;
+  height: 35px;
+  background-image: url('/images/volume.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .virtual-machine-icon {
+  width: 43px;
+  height: 38px;
+  background-image: url('/images/virtual-machine.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .extservice-icon {
+  width: 35px;
+  height: 27px;
+  background-image: url('/images/extservice.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .internal-icon {
+  width: 35px;
+  height: 27px;
+  background-image: url('/images/internal.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .data-icon {
+  width: 30px;
+  height: 40px;
+  background-image: url('/images/data.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .performance-icon {
+  width: 34px;
+  height: 33px;
+  background-image: url('/images/performance.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .available-icon {
+  width: 22px;
+  height: 40px;
+  background-image: url('/images/available.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .resource-icon {
+  width: 26px;
+  height: 42px;
+  background-image: url('/images/resource.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .placement-icon {
+  width: 28px;
+  height: 36px;
+  background-image: url('/images/placement.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .external-icon {
+  width: 48px;
+  height: 32px;
+  background-image: url('/images/external-policies.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.left-panel .panel .new-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('/images/new-policies.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
 
 /*Middle section css*/
-.middle-section{
-  border: 1px solid gray;
+
+.middle-section {
+  padding-right: 0;
   min-height: 635px;
+  background: #fff;
 }
 
+.middle-section .tier-wrapper {
+  background: #e3effa;
+}
+
+.middle-section .tier-wrapper .panel-heading {
+  background: none;
+  border: 0;
+}
+
+.middle-section .tier-wrapper .panel-heading .panel-title {
+  color: #666c71;
+}
+
+.middle-section .tier-wrapper .panel-body .volume-wrapper {
+  width: 41px;
+  margin: 0 auto;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon {
+  width: 41px;
+  height: 30px;
+  background-image: url('/images/volume-icon.png');
+  background-size: 100% 100%;
+  position: absolute;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(1) {
+  top: 0;
+  z-index: 20;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(2) {
+  top: 13px;
+  z-index: 19;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(3) {
+  top: 26px;
+  z-index: 18;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(4) {
+  top: 39px;
+  z-index: 17;
+}
+
+.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(5) {
+  top: 52px;
+  z-index: 16;
+}
+
+.tier-wrapper .panel-body .external-port-icon {
+  width: 35px;
+  height: 27px;
+  background-image: url('/images/ext-port.png');
+  background-size: 100% 100%;
+  float: left;
+  margin-left: 10px;
+}
+
+.tier-wrapper .panel-body .internal-port-icon {
+  width: 35px;
+  height: 27px;
+  background-image: url('/images/int-port.png');
+  background-size: 100% 100%;
+  float: left;
+  margin-left: 10px;
+}
+
+
 /* Animation of ngAnimate */
+
 .template-animation {
   transition: all linear 0.5s;
 }
-.right-panel {
-    position: relative;
 
-    right: 0px;
-    height: 100%;
-    background-color: #f3f3f3;
-    min-height: 200px;
+.right-panel {
+  height: 100%;
+  background-color: #f3f3f3;
+  min-height: 200px;
 }
+
+.right-panel .tab-content {
+  padding: 20px 30px;
+}
+
 .animate-show {
-  -moz-transition:all linear 1s;
-  -o-transition:all linear 1s;
-  transition:all linear 1s;
-  display:block!important;
-  -webkit-transition:all linear 1s;
-  transition:all linear 1s;
-  opacity:1;
+  -moz-transition: all linear 1s;
+  -o-transition: all linear 1s;
+  transition: all linear 1s;
+  display: block!important;
+  -webkit-transition: all linear 1s;
+  transition: all linear 1s;
+  opacity: 1;
 }
 
 .animate-show.ng-hide-add,
 .animate-show.ng-hide-remove {
-  display:block!important;
+  display: block!important;
 }
 
 .animate-show.ng-hide {
-  opacity:0;
+  opacity: 0;
 }
+
 .tier {
   transition: 1s linear all;
-  -webkit-transition:all linear 1s;
+  -webkit-transition: all linear 1s;
 }
 
 .tier.ng-enter {
@@ -117,7 +343,4 @@ nav a.active{
 
 .tier.ng-leave.ng-leave-active {
   opacity: 0;
-}
-port{
-  cursor: pointer;
 }

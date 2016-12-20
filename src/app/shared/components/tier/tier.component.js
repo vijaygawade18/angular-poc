@@ -2,7 +2,6 @@
 
 class TierComponentController {
   constructor($scope) {
-
     this.isDetailsPanelVisible = false;
     this.scope = $scope;
 
@@ -11,8 +10,7 @@ class TierComponentController {
       containers: [],
       ports: []
     }
-
-    $scope.$on('event:showInfoUpdated', (evt, data) => {
+    $scope.$on('event:showInfoUpdated', (evt, data) => { 
       this.tier = Object.assign({}, this.tier, data);
     })
   }
@@ -64,9 +62,24 @@ class TierComponentController {
   onPostInformationUpdate() {
 
   }
+
+  showDetails() { 
+    this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
+
+    this.scope.$emit('event:showInfo', {
+      type: 'tier',
+      data: this.tier,
+      isVisible: this.isDetailsPanelVisible
+    })
+  }
+
+  onPostInformationUpdate() { 
+
+  }
+
 }
 
-TierComponentController.$inject = [ '$scope' ];
+TierComponentController.$inject = ['$scope'];
 
 export const TierComponent = {
   bindings: {

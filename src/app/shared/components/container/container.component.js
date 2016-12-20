@@ -72,6 +72,7 @@ class ContainerComponentController {
     console.log('working');
     this.isDetailsPanelVisible = true;
 
+
     this.scope.$emit('event:showInfo', {
       type: 'volume',
       data: this.container.volumes,
