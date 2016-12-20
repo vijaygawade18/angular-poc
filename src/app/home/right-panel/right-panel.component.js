@@ -32,6 +32,9 @@ class RightPanelController {
       case 'volume':
         template = 'volume-info.html'
         break;
+      case 'port':
+        template = 'port-info.html'
+        break;
       default:
         template = 'tier-info.html';
         break;

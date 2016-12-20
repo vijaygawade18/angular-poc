@@ -46,7 +46,11 @@ class ContainerComponentController {
     } else {
       prevContainer.ports.push({
         name: `new ${data}`,
-        type: data.indexOf('ext') > -1 ? 'ext' : 'int'
+        type: data.indexOf('ext') > -1 ? 'ext' : 'int',
+        containerPort: 0,
+        servicePort: 0,
+        hostPort: 0,
+        protocol: 'test'
       })
     }
 
@@ -69,13 +73,11 @@ class ContainerComponentController {
 
   showPortDetails(evt) {
     evt.preventDefault();
-    console.log('working');
+
     this.isDetailsPanelVisible = true;
-
-
     this.scope.$emit('event:showInfo', {
-      type: 'volume',
-      data: this.container.volumes,
+      type: 'port',
+      data: this.container.ports,
       isVisible: this.isDetailsPanelVisible
     })
     evt.stopPropagation();

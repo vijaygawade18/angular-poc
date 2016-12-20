@@ -10,7 +10,7 @@ class TierComponentController {
       containers: [],
       ports: []
     }
-    $scope.$on('event:showInfoUpdated', (evt, data) => { 
+    $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.tier = Object.assign({}, this.tier, data);
     })
   }
@@ -32,7 +32,11 @@ class TierComponentController {
     } else {
       prevObj.ports.push({
         name: `new ${data}`,
-        type: data.indexOf('ext') > -1 ? 'ext' : 'int'
+        type: data.indexOf('ext') > -1 ? 'ext' : 'int',
+        containerPort: 0,
+        servicePort: 0,
+        hostPort: 0,
+        protocol: 'test'
       });
     }
     this.tier = Object.assign({}, this.tier, prevObj);
@@ -63,7 +67,7 @@ class TierComponentController {
 
   }
 
-  showDetails() { 
+  showDetails() {
     this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
 
     this.scope.$emit('event:showInfo', {
@@ -73,7 +77,19 @@ class TierComponentController {
     })
   }
 
-  onPostInformationUpdate() { 
+  showPortDetails(evt) {
+    evt.preventDefault();
+
+    this.isDetailsPanelVisible = true;
+    this.scope.$emit('event:showInfo', {
+      type: 'port',
+      data: this.tier.ports,
+      isVisible: this.isDetailsPanelVisible
+    })
+    evt.stopPropagation();
+  }
+
+  onPostInformationUpdate() {
 
   }
 
