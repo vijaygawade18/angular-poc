@@ -3,27 +3,27 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-9 clearfix">
-        <div class="well" ng-if="!$ctrl.container.image">No image found</div>
-        <img class="img img-circle" ng-if="$ctrl.container.image" ng-src="$ctrl.container.image"
-        />
+        <!--div class="well" ng-if="!$ctrl.container.image">No image found</div-->
+        <div class="img-container" ng-src="$ctrl.container.image">Container Image 1</div>
       </div>
       <div class="col-md-3" ng-click="$ctrl.showVolumeDetails($event);">
-        <volume class="well" data="volume" ng-repeat="volume in $ctrl.container.volumes">
+        <volume data="volume" ng-repeat="volume in $ctrl.container.volumes">
         </volume>
-        <div class="well" ng-if="$ctrl.container.volumes.length == 0">
+        <div class="vol-icon-shadow"></div>
+        <!--div class="well" ng-if="$ctrl.container.volumes.length == 0">
           No volume found
-        </div>
+        </div-->
       </div>
     </div>
     <div class="clearfix"></div>
     <div class="row">
       <div class="col-md-12 clearfix">
-        <port class="well" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"
+        <port type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"
           ng-click="$ctrl.showPortDetails($event)">
         </port>
-        <div class="well" ng-if="$ctrl.container.ports.length == 0">
+        <!--div class="well" ng-if="$ctrl.container.ports.length == 0">
           No ports found
-        </div>
+        </div-->
       </div>
     </div>
   </div>

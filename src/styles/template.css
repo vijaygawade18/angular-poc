@@ -3,8 +3,22 @@ body {
   background-size: 100% 100%;
 }
 
+header {
+  background-image: url('/images/header.png');
+  background-size: 100% 100%;
+  height: 56px;
+}
+
+.app-wrapper {
+  padding: 20px;
+}
+
 .no-padding {
   padding: 0;
+}
+
+.no-right-padding {
+  padding-right: 0;
 }
 
 .marTop10 {
@@ -217,15 +231,31 @@ nav a.active {
   padding-right: 0;
   min-height: 635px;
   background: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .middle-section .tier-wrapper {
   background: #e3effa;
+  border-radius: 5px;
+  border: 0;
+  width: 275px;
+  margin-bottom: 50px;
+}
+
+.middle-section .tier-wrapper .panel-body .panel {
+  background: none;
+  box-shadow: none;
+  border: 0;
 }
 
 .middle-section .tier-wrapper .panel-heading {
   background: none;
   border: 0;
+  text-align: center;
+  margin-top: -30px;
 }
 
 .middle-section .tier-wrapper .panel-heading .panel-title {
@@ -234,7 +264,7 @@ nav a.active {
 
 .middle-section .tier-wrapper .panel-body .volume-wrapper {
   width: 41px;
-  margin: 0 auto;
+  height: 41px;
 }
 
 .tier-wrapper .panel-body .volume-wrapper .volume-icon {
@@ -245,47 +275,86 @@ nav a.active {
   position: absolute;
 }
 
+.tier-wrapper .panel-body .vol-icon-shadow {
+  width: 88px;
+  height: 33px;
+  background-image: url('/images/vol-shadow.png');
+  background-size: 100% 100%;
+  position: absolute;
+  left: -21px;
+  top: 20px;
+}
+
 .tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(1) {
-  top: 0;
-  z-index: 20;
+  bottom: 0;
+  z-index: 1;
 }
 
 .tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(2) {
-  top: 13px;
-  z-index: 19;
+  bottom: 13px;
+  z-index: 2;
 }
 
 .tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(3) {
-  top: 26px;
-  z-index: 18;
+  bottom: 26px;
+  z-index: 3;
 }
 
 .tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(4) {
-  top: 39px;
-  z-index: 17;
+  bottom: 39px;
+  z-index: 4;
 }
 
 .tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(5) {
-  top: 52px;
-  z-index: 16;
+  bottom: 52px;
+  z-index: 5;
 }
 
-.tier-wrapper .panel-body .external-port-icon {
+.tier-wrapper .external-port-icon {
   width: 35px;
   height: 27px;
   background-image: url('/images/ext-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;
+  margin-top: -10px;
 }
 
-.tier-wrapper .panel-body .internal-port-icon {
+.tier-wrapper .internal-port-icon {
   width: 35px;
   height: 27px;
   background-image: url('/images/int-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;
+  margin-top: -10px;
+}
+
+.tier-badge {
+  position: relative;
+  top: -5px;
+  left: -5px;
+  font-size: 14px;
+  background: #e3effa;
+  color: #666c71;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px #333; */
+  border: 5px solid #fff;
+}
+
+.middle-section .tier-wrapper .panel-body .img-container {
+  width: 148px;
+  height: 55px;
+  background-color: #a0cae6;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
 }
 
 
@@ -299,10 +368,35 @@ nav a.active {
   height: 100%;
   background-color: #f3f3f3;
   min-height: 200px;
+  border-left: 1px solid #c5c5c5;
 }
 
 .right-panel .tab-content {
   padding: 20px 30px;
+}
+
+.right-panel ul.nav.nav-tabs,
+ul.nav.nav-tabs a {
+  border: 0;
+  color: #000;
+}
+
+.right-panel ul.nav.nav-tabs li {
+  width: 50%;
+  text-align: center;
+}
+
+.right-panel ul.nav.nav-tabs li.active > a {
+  background-color: #d0d4dc;
+  color: #000;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.right-panel ul.nav.nav-tabs li.active > a:hover,
+.right-panel ul.nav.nav-tabs li.active > a:focus {
+  border-radius: 0;
+  border: 0;
 }
 
 .animate-show {
