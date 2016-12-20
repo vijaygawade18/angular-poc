@@ -27,5 +27,5 @@ export const IntPortComponent = {
     data: '<'
   },
   controller: IntPortController,
-  template: require('./int-port.component.html')
+  template: '<div class="internal-port-icon bounce-in-animation animated"></div>'
 }

@@ -93,7 +93,7 @@ nav a.active {
 .left-panel .panel {
   border: 1px solid gray;
   text-align: center;
-  padding: 20px;
+  padding: 15px 10px 5px;
   background: transparent;
   margin-bottom: 2px;
 }
@@ -121,39 +121,39 @@ nav a.active {
 }
 
 .left-panel .panel .add-tier-icon {
-  width: 38px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-image: url('/resources/images/add-tier.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .container-icon {
-  width: 38px;
-  height: 40px;
-  background-image: url('/resources/images/add-tier.png');
+  width: 30px;
+  height: 30px;
+  background-image: url('/resources/images/container-icon.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .volume-icon {
-  width: 32px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   background-image: url('/resources/images/volume.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .virtual-machine-icon {
-  width: 43px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   background-image: url('/resources/images/virtual-machine.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .extservice-icon {
-  width: 35px;
+  width: 30px;
   height: 27px;
   background-image: url('/resources/images/extservice.png');
   background-size: 100% 100%;
@@ -161,7 +161,7 @@ nav a.active {
 }
 
 .left-panel .panel .internal-icon {
-  width: 35px;
+  width: 30px;
   height: 27px;
   background-image: url('/resources/images/internal.png');
   background-size: 100% 100%;
@@ -170,55 +170,55 @@ nav a.active {
 
 .left-panel .panel .data-icon {
   width: 30px;
-  height: 40px;
+  height: 30px;
   background-image: url('/resources/images/data.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .performance-icon {
-  width: 34px;
-  height: 33px;
+  width: 30px;
+  height: 30px;
   background-image: url('/resources/images/performance.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .available-icon {
-  width: 22px;
-  height: 40px;
+  width: 20px;
+  height: 30px;
   background-image: url('/resources/images/available.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .resource-icon {
-  width: 26px;
-  height: 42px;
+  width: 20px;
+  height: 30px;
   background-image: url('/resources/images/resource.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .placement-icon {
-  width: 28px;
-  height: 36px;
+  width: 24px;
+  height: 30px;
   background-image: url('/resources/images/placement.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .external-icon {
-  width: 48px;
-  height: 32px;
+  width: 35px;
+  height: 30px;
   background-image: url('/resources/images/external-policies.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
 
 .left-panel .panel .new-icon {
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   background-image: url('/resources/images/new-policies.png');
   background-size: 100% 100%;
   margin: 0 auto;
@@ -311,17 +311,17 @@ nav a.active {
 }
 
 .tier-wrapper .panel-body .volume-wrapper volume:nth-child(6) .volume-icon {
-  bottom: 52px;
+  bottom: 65px;
   z-index: 5;
 }
 
 .tier-wrapper .panel-body .volume-wrapper volume:nth-child(7) .volume-icon {
-  bottom: 52px;
+  bottom: 78px;
   z-index: 5;
 }
 
 .tier-wrapper .panel-body .volume-wrapper volume:nth-child(8) .volume-icon {
-  bottom: 52px;
+  bottom: 91px;
   z-index: 5;
 }
 
@@ -384,10 +384,52 @@ nav a.active {
   background-color: #f3f3f3;
   min-height: 200px;
   border-left: 1px solid #c5c5c5;
+  max-height: 635px;
+  overflow: auto;
 }
 
 .right-panel .tab-content {
   padding: 20px 30px;
+}
+
+.right-panel .tab-content .tab-pane {
+  padding: 0 10px;
+}
+
+.right-panel .tab-content .tab-pane .tier-detail-heading,
+.tab-pane .volume-heading,
+.tab-pane .container-info-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.right-panel .tab-content .tab-pane .tier-detail-heading label,
+.tab-pane .volume-heading label,
+.tab-pane .container-info-heading label {
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.right-panel .tab-content .tab-pane .delete-icon {
+  width: 14px;
+  height: 15px;
+  background-image: url(/images/delete-icon.png);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.right-panel .tab-content .tab-pane .form-group label {
+  font-size: 14px;
+  font-weight: normal;
+  color: #707070;
+}
+
+.right-panel .tab-content .tab-pane .form-group input[type="checkbox"] {
+  width: 18px;
+  height: 15px;
 }
 
 .right-panel ul.nav.nav-tabs,
@@ -401,8 +443,12 @@ ul.nav.nav-tabs a {
   text-align: center;
 }
 
-.right-panel ul.nav.nav-tabs li.active > a {
+.right-panel ul.nav.nav-tabs li > a {
   background-color: #d0d4dc;
+}
+
+.right-panel ul.nav.nav-tabs li.active > a {
+  background-color: #f3f3f3;
   color: #000;
   font-size: 14px;
   border-radius: 0;
@@ -452,4 +498,97 @@ ul.nav.nav-tabs a {
 
 .tier.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+
+/**animation**/
+
+@-webkit-keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.bounce-in-animation {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
 }

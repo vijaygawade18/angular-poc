@@ -3,7 +3,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-9 clearfix">
-        <div class="img-container" ng-src="$ctrl.container.image">Container Image 1</div>
+        <div class="img-container bounce-in-animation animated" ng-src="$ctrl.container.image">Container Image 1</div>
       </div>
       <div class="col-md-3" ng-click="$ctrl.showVolumeDetails($event);">
         <div class="volume-wrapper">
@@ -19,9 +19,6 @@
         <port type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"
           ng-click="$ctrl.showPortDetails($event)">
         </port>
-        <!--div class="well" ng-if="$ctrl.container.ports.length == 0">
-          No ports found
-        </div-->
       </div>
     </div>
   </div>

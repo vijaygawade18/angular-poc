@@ -1,4 +1,4 @@
-<div class="panel panel-default template-animation tier-wrapper" 
+<div class="panel panel-default template-animation tier-wrapper bounce-in-animation animated" 
  ng-click="$ctrl.showDetails();" 
  ui-on-drop="$ctrl.onDropOverTier($event, $data);" 
  drop-channel="container, port">
@@ -9,13 +9,11 @@
   <div class="panel-body">
     <!-- repeat containers -->
     <container data="container" 
-      class="fade"
       ng-repeat="container in $ctrl.tier.containers">
     </container>
   </div>
   <!-- repeat ports -->
   <port data="port" 
-    class="fade"
     type="{{port.type}}"
     data="port"
     ng-repeat="port in $ctrl.tier.ports">

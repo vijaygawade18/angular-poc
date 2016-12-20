@@ -27,5 +27,5 @@ export const ExtPortComponent = {
     data: '<'
   },
   controller: ExtPortController,
-  template: require('./ext-port.component.html')
+  template: '<div class="external-port-icon bounce-in-animation animated"></div>'
 }

@@ -1,11 +1,9 @@
 <div class="right-panel">
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Information</a></li>
     <li role="presentation"><a href="#yaml" aria-controls="profile" role="tab" data-toggle="tab">YAML</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="info">
@@ -16,77 +14,64 @@
     <div role="tabpanel" class="tab-pane" id="yaml">YAML</div>
   </div>
 </div>
-
 <!-- tier details templates -->
 <script type="text/ng-template" id="tier-info.html">
-Tier Details<br />
-<div class="form-group">
-    <label>Name :</label>
-    <input type="text" ng-model="$ctrl.templateData.name" class="form-control"
-     ng-change="onInformationUpdate($event.target.value)">
+  <div class="tier-detail-heading">
+    <label>Tier Details</label><i class="delete-icon"></i>
   </div>
   <div class="form-group">
-    <label>Type :</label>
-    <input type="text" ng-model="$ctrl.templateData.type" class="form-control"
-    ng-change="onInformationUpdate($event.target.value)">
+    <label>Name</label>
+    <input type="text" ng-model="$ctrl.templateData.name" class="form-control" ng-change="onInformationUpdate($event.target.value)">
   </div>
   <div class="form-group">
-    <label>Replicas :</label><br>
-    <input class="form-control" ng-model="$ctrl.templateData.replica" type="text"
-    ng-change="onInformationUpdate($event.target.value)">
-</div>
+    <label>Type</label>
+    <input type="text" ng-model="$ctrl.templateData.type" class="form-control" ng-change="onInformationUpdate($event.target.value)">
+  </div>
+  <div class="form-group">
+    <label>Replicas</label>
+    <br>
+    <input class="form-control" ng-model="$ctrl.templateData.replica" type="text" ng-change="onInformationUpdate($event.target.value)">
+  </div>
 </script>
-
 <!-- container details templates -->
 <script type="text/ng-template" id="container-info.html">
   <div ng-repeat="templateItem in $ctrl.templateData">
-
-    <div class="form-group">
-      <label>Name :</label>
-      <input type="text" class="form-control"
-      ng-model="templateItem.name"
-      ng-change="onInformationUpdate($event.target.value)">
+    <div class="container-info-heading">
+      <label>Container 1</label><i class="delete-icon"></i>
     </div>
     <div class="form-group">
-      <label>Image :</label>
-      <input type="text" class="form-control"
-      ng-model="templateItem.image"
-      ng-change="onInformationUpdate($event.target.value)">
+      <label>Name</label>
+      <input type="text" class="form-control" ng-model="templateItem.name" ng-change="onInformationUpdate($event.target.value)">
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="text" class="form-control" ng-model="templateItem.image" ng-change="onInformationUpdate($event.target.value)">
     </div>
     <hr/>
   </div>
-
 </script>
-
 <!-- volume details templates -->
 <script type="text/ng-template" id="volume-info.html">
-<div ng-repeat="volumeItem in $ctrl.templateData">
-  <div class="form-group">
-      <label>Name :</label>
-      <input type="text" class="form-control"
-      ng-model="volumeItem.name"
-      ng-change="onInformationUpdate($event.target.value)">
+  <div ng-repeat="volumeItem in $ctrl.templateData">
+    <div class="volume-heading">
+      <label>Volume 1</label><i class="delete-icon"></i>
     </div>
     <div class="form-group">
-      <label>Read only:</label>
-      <input type="checkbox" class="form-control"
-      ng-model="volumeItem.readOnly"
-      ng-change="onInformationUpdate($event.target.value)">
+      <label>Name</label>
+      <input type="text" class="form-control" ng-model="volumeItem.name" ng-change="onInformationUpdate($event.target.value)">
     </div>
     <div class="form-group">
-      <label>Min. Size :</label>
-      <input type="text" class="form-control"
-      ng-model="volumeItem.minSize"
-      ng-change="onInformationUpdate($event.target.value)">
+      <input type="checkbox" ng-model="volumeItem.readOnly" ng-change="onInformationUpdate($event.target.value)">
+      <label>Read only</label>
     </div>
     <div class="form-group">
-      <label>Max. Size :</label>
-      <input type="text" class="form-control"
-      ng-model="volumeItem.maxSize"
-      ng-change="onInformationUpdate($event.target.value)">
+      <label>Min. Size</label>
+      <input type="text" class="form-control" ng-model="volumeItem.minSize" ng-change="onInformationUpdate($event.target.value)">
+    </div>
+    <div class="form-group">
+      <label>Max. Sizes</label>
+      <input type="text" class="form-control" ng-model="volumeItem.maxSize" ng-change="onInformationUpdate($event.target.value)">
     </div>
     <hr/>
-</div>
-
+  </div>
 </script>
-
