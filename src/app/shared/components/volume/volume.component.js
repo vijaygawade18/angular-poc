@@ -27,5 +27,5 @@ export const VolumeComponent = {
     data: '<'
   },
   controller: VolumeController,
-  template: require('./volume.component.html')
+  template: '<div class="volume-icon"></div>'
 }

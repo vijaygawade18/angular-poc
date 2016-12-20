@@ -29,7 +29,7 @@ export const PortComponent = {
   },
   controller: PortController,
   template: `
-    <ext-port data="$ctrl.data" ng-show="type !== 'int'"></ext-port>
-    <int-port data="$ctrl.data" ng-show="type == 'int'"></int-port>
+    <ext-port data="$ctrl.data" ng-show="$ctrl.type == 'ext'"></ext-port>
+    <int-port data="$ctrl.data" ng-show="$ctrl.type == 'int'"></int-port>
   `
 }

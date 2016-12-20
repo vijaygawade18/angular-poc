@@ -1,10 +1,10 @@
 body {
-  background-image: url('/images/bg.png');
+  background-image: url('/resources/images/bg.png');
   background-size: 100% 100%;
 }
 
 header {
-  background-image: url('/images/header.png');
+  background-image: url('/resources/images/header.png');
   background-size: 100% 100%;
   height: 56px;
 }
@@ -123,7 +123,7 @@ nav a.active {
 .left-panel .panel .add-tier-icon {
   width: 38px;
   height: 40px;
-  background-image: url('/images/add-tier.png');
+  background-image: url('/resources/images/add-tier.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -131,7 +131,7 @@ nav a.active {
 .left-panel .panel .container-icon {
   width: 38px;
   height: 40px;
-  background-image: url('/images/add-tier.png');
+  background-image: url('/resources/images/add-tier.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -139,7 +139,7 @@ nav a.active {
 .left-panel .panel .volume-icon {
   width: 32px;
   height: 35px;
-  background-image: url('/images/volume.png');
+  background-image: url('/resources/images/volume.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -147,7 +147,7 @@ nav a.active {
 .left-panel .panel .virtual-machine-icon {
   width: 43px;
   height: 38px;
-  background-image: url('/images/virtual-machine.png');
+  background-image: url('/resources/images/virtual-machine.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -155,7 +155,7 @@ nav a.active {
 .left-panel .panel .extservice-icon {
   width: 35px;
   height: 27px;
-  background-image: url('/images/extservice.png');
+  background-image: url('/resources/images/extservice.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -163,7 +163,7 @@ nav a.active {
 .left-panel .panel .internal-icon {
   width: 35px;
   height: 27px;
-  background-image: url('/images/internal.png');
+  background-image: url('/resources/images/internal.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -171,7 +171,7 @@ nav a.active {
 .left-panel .panel .data-icon {
   width: 30px;
   height: 40px;
-  background-image: url('/images/data.png');
+  background-image: url('/resources/images/data.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -179,7 +179,7 @@ nav a.active {
 .left-panel .panel .performance-icon {
   width: 34px;
   height: 33px;
-  background-image: url('/images/performance.png');
+  background-image: url('/resources/images/performance.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -187,7 +187,7 @@ nav a.active {
 .left-panel .panel .available-icon {
   width: 22px;
   height: 40px;
-  background-image: url('/images/available.png');
+  background-image: url('/resources/images/available.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -195,7 +195,7 @@ nav a.active {
 .left-panel .panel .resource-icon {
   width: 26px;
   height: 42px;
-  background-image: url('/images/resource.png');
+  background-image: url('/resources/images/resource.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -203,7 +203,7 @@ nav a.active {
 .left-panel .panel .placement-icon {
   width: 28px;
   height: 36px;
-  background-image: url('/images/placement.png');
+  background-image: url('/resources/images/placement.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -211,7 +211,7 @@ nav a.active {
 .left-panel .panel .external-icon {
   width: 48px;
   height: 32px;
-  background-image: url('/images/external-policies.png');
+  background-image: url('/resources/images/external-policies.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -219,7 +219,7 @@ nav a.active {
 .left-panel .panel .new-icon {
   width: 32px;
   height: 32px;
-  background-image: url('/images/new-policies.png');
+  background-image: url('/resources/images/new-policies.png');
   background-size: 100% 100%;
   margin: 0 auto;
 }
@@ -270,7 +270,7 @@ nav a.active {
 .tier-wrapper .panel-body .volume-wrapper .volume-icon {
   width: 41px;
   height: 30px;
-  background-image: url('/images/volume-icon.png');
+  background-image: url('/resources/images/volume-icon.png');
   background-size: 100% 100%;
   position: absolute;
 }
@@ -278,34 +278,49 @@ nav a.active {
 .tier-wrapper .panel-body .vol-icon-shadow {
   width: 88px;
   height: 33px;
-  background-image: url('/images/vol-shadow.png');
+  background-image: url('/resources/images/vol-shadow.png');
   background-size: 100% 100%;
   position: absolute;
   left: -21px;
   top: 20px;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(1) {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(1) .volume-icon {
   bottom: 0;
   z-index: 1;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(2) {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(2) .volume-icon {
   bottom: 13px;
   z-index: 2;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(3) {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(3) .volume-icon {
   bottom: 26px;
   z-index: 3;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(4) {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(4) .volume-icon {
   bottom: 39px;
   z-index: 4;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon:nth-child(5) {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(5) .volume-icon {
+  bottom: 52px;
+  z-index: 5;
+}
+
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(6) .volume-icon {
+  bottom: 52px;
+  z-index: 5;
+}
+
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(7) .volume-icon {
+  bottom: 52px;
+  z-index: 5;
+}
+
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(8) .volume-icon {
   bottom: 52px;
   z-index: 5;
 }
@@ -313,7 +328,7 @@ nav a.active {
 .tier-wrapper .external-port-icon {
   width: 35px;
   height: 27px;
-  background-image: url('/images/ext-port.png');
+  background-image: url('/resources/images/ext-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;
@@ -323,7 +338,7 @@ nav a.active {
 .tier-wrapper .internal-port-icon {
   width: 35px;
   height: 27px;
-  background-image: url('/images/int-port.png');
+  background-image: url('/resources/images/int-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;

@@ -37,7 +37,7 @@ class ContainerComponentController {
         name: 'new volume',
         readonly: false,
         minsize: 0,
-        maxsize:10,
+        maxsize: 10,
         image: ''
       })
     }
@@ -79,6 +79,20 @@ class ContainerComponentController {
       isVisible: this.isDetailsPanelVisible
     })
     evt.stopPropagation();
+  }
+
+  groupByRow(data, numberOfColPerRow = 4) {
+    let newArr = [];
+
+    if (data.length < numberOfColPerRow) {
+      newArr.push(data)
+    }
+    else
+      for (let i = 0; i < data.length; i += numberOfColPerRow) {
+        newArr.push(data.slice(i, i + numberOfColPerRow));
+      }
+
+    return newArr;
   }
 }
 
