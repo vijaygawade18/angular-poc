@@ -9,8 +9,8 @@
         />
       </div>
       <div class="col-md-3" ng-click="$ctrl.showVolumeDetails($event);">
-        <port class="well" data="volume" ng-repeat="volume in $ctrl.container.volumes">
-        </port>
+        <volume class="well" data="volume" ng-repeat="volume in $ctrl.container.volumes">
+        </volume>
         <div class="well" ng-if="$ctrl.container.volumes.length == 0">
           No volume found
         </div>
@@ -19,7 +19,7 @@
     <div class="clearfix"></div>
     <div class="row">
       <div class="col-md-12 clearfix">
-        <port class="well" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"  ng-click="showPortDetails($event)">
+        <port class="well" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.container.ports"  ng-click="$ctrl.showPortDetails($event)">
         </port>
         <div class="well" ng-if="$ctrl.container.ports.length == 0">
           No ports found
