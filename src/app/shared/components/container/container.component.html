@@ -1,17 +1,18 @@
 <div class="panel panel-default" ui-on-drop="$ctrl.onDropOverContainer($event, $data)"
   drop-channel="image, volume, port">
-  <div class="panel-body">
+  <div class="tier-body">
     <div class="row">
       <div class="col-md-8 clearfix">
         <div class="img-container bounce-in-animation animated" ng-src="$ctrl.container.image">Container Image {{$parent.$index + 1}}</div>
       </div>
-      <div class="col-md-4 no-padding" >
-          <div class="volume" ng-class="this.$index == 1 ? 'volPosLeft':''" ng-repeat="rows in $ctrl.groupedVolumes | limitTo:'2'">
-              <div class="volume-wrapper" ng-click="$ctrl.showVolumeDetails($event);" >
-                  <volume data="volume" ng-repeat="volume in rows"></volume>
-              </div>
-              <div class="vol-icon-shadow"></div>
+      <div class="col-md-4 no-padding">
+        <div class="volume" ng-class="this.$index == 1 ? 'volPosLeft':''" ng-repeat="rows in $ctrl.groupedVolumes | limitTo:'2'">
+          <div class="volume-wrapper" ng-click="$ctrl.showVolumeDetails($event);">
+            <volume data="volume" ng-repeat="volume in rows"></volume>
           </div>
+          <div class="vol-icon-shadow"></div>
+        </div>
+        >
       </div>
     </div>
     <div class="clearfix"></div>

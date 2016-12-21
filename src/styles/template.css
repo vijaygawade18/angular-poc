@@ -240,12 +240,13 @@ nav a.active {
 
 .middle-section .network-block {
   background: #f8d6da;
-  padding: 15px;
+  padding: 12px 18px;
   border-radius: 5px;
   text-align: center;
   font-size: 14px;
   color: #000;
   margin-bottom: 20px;
+  display: inline-flex;
 }
 
 .middle-section .tier-wrapper {
@@ -260,32 +261,39 @@ nav a.active {
   background: none;
   box-shadow: none;
   border: 0;
+  margin: 35px 0;
 }
 
 .middle-section .tier-wrapper .panel-heading {
   background: none;
   border: 0;
   text-align: center;
-  margin-top: -30px;
+  margin-top: -10px;
+  padding: 0;
 }
 
 .middle-section .tier-wrapper .panel-heading .panel-title {
   color: #666c71;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .middle-section .tier-wrapper .panel-body .volume-wrapper {
   width: 41px;
   height: 46px;
 }
-.tier-wrapper .panel-body .volume{
+
+.tier-wrapper .panel-body .volume {
   display: inline-block;
-  top:0;
-  position:relative;
+  top: 0;
+  position: relative;
   width: 40px;
 }
-.tier-wrapper .panel-body .volPosLeft{
-  left:4px;
+
+.tier-wrapper .panel-body .volPosLeft {
+  left: 4px;
 }
+
 .tier-wrapper .panel-body .volume-wrapper .volume-icon {
   width: 20px;
   height: 15px;
@@ -346,39 +354,38 @@ nav a.active {
 }
 
 .tier-wrapper .external-port-icon {
-  width: 35px;
-  height: 27px;
+  width: 18px;
+  height: 14px;
   background-image: url('/resources/images/ext-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;
-  margin-top: -10px;
+  margin-top: -7px;
 }
 
 .tier-wrapper .internal-port-icon {
-  width: 35px;
-  height: 27px;
+  width: 18px;
+  height: 14px;
   background-image: url('/resources/images/int-port.png');
   background-size: 100% 100%;
   float: left;
   margin-left: 10px;
-  margin-top: -10px;
+  margin-top: -7px;
 }
 
 .tier-badge {
   position: relative;
-  top: -5px;
+  top: -2px;
   left: -5px;
-  font-size: 14px;
+  font-size: 12px;
   background: #e3effa;
   color: #666c71;
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   text-align: center;
-  line-height: 35px;
+  line-height: 25px;
   border-radius: 50%;
-  /* box-shadow: 0 0 1px #333; */
-  border: 5px solid #fff;
+  border: 4px solid #fff;
 }
 
 .middle-section .tier-wrapper .panel-body .img-container {
@@ -390,6 +397,7 @@ nav a.active {
   align-items: center;
   border-radius: 5px;
   font-size: 12px;
+  justify-content: center;
 }
 
 .middle-section .tier-wrapper .panel-body .tier-connector {
@@ -445,23 +453,29 @@ nav a.active {
 .tab-pane .volume-heading label,
 .tab-pane .container-info-heading label {
   font-size: 16px;
-  color: #000;
+  color: #202020;
   margin: 0;
   padding-bottom: 10px;
+  font-weight: normal;
 }
 
 .right-panel .tab-content .tab-pane .delete-icon {
-  width: 14px;
-  height: 15px;
-  background-image: url(/images/delete-icon.png);
+  width: 10px;
+  height: 12px;
+  background-image: url(/resources/images/delete-icon.png);
   background-size: 100% 100%;
   cursor: pointer;
 }
 
 .right-panel .tab-content .tab-pane .form-group label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: normal;
   color: #707070;
+}
+
+.right-panel .tab-content .tab-pane .form-group input[type="text"] {
+  font-size: 13px;
+  color: #202020;
 }
 
 .right-panel .tab-content .tab-pane .form-group input[type="checkbox"] {
@@ -482,12 +496,12 @@ ul.nav.nav-tabs a {
 
 .right-panel ul.nav.nav-tabs li > a {
   background-color: #d0d4dc;
+  font-size: 13px;
 }
 
 .right-panel ul.nav.nav-tabs li.active > a {
   background-color: #f3f3f3;
   color: #000;
-  font-size: 14px;
   border-radius: 0;
 }
 
