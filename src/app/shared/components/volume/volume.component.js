@@ -27,5 +27,5 @@ export const VolumeComponent = {
     data: '<'
   },
   controller: VolumeController,
-  template: '<div class="volume-icon bounce-in-animation animated"></div>'
+  template: '<div class="volume-icon bounce-down-animation animated"></div>'
 }

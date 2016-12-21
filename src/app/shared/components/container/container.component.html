@@ -2,10 +2,10 @@
   drop-channel="image, volume, port">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-9 clearfix">
+      <div class="col-md-8 clearfix">
         <div class="img-container bounce-in-animation animated" ng-src="$ctrl.container.image">Container Image 1</div>
       </div>
-      <div class="col-md-3" ng-click="$ctrl.showVolumeDetails($event);">
+      <div class="col-md-4 no-padding" ng-click="$ctrl.showVolumeDetails($event);">
         <div class="volume-wrapper">
           <volume data="volume" ng-repeat="volume in $ctrl.container.volumes">
           </volume>
