@@ -1,7 +1,6 @@
 import angular from 'angular';
 
-import { SHARED_DIRECTIVES } from './shared/directives'
-import { SHARED_COMPONENTS } from './shared/components'
+import { SHARED_COMPONENTS, SHARED_DIRECTIVES } from './shared'
 
 import routing from './app.config'
 
