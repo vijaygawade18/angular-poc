@@ -13,6 +13,8 @@ class ContainerComponentController {
       ports: []
     }
 
+    this.groupedVolumes = [];
+
     $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.container = Object.assign({}, this.container, data);
     })
@@ -33,13 +35,15 @@ class ContainerComponentController {
     let prevContainer = this.container;
 
     if (data == 'volume') {
-      prevContainer.volumes.push({
-        name: 'new volume',
-        readonly: false,
-        minsize: 0,
-        maxsize: 10,
-        image: ''
-      })
+      if(prevContainer.volumes.length <= 15){
+        prevContainer.volumes.push({
+          name: 'new volume',
+          readonly: false,
+          minsize: 0,
+          maxsize: 10,
+          image: ''
+        })
+      }
     }
     else if (data == 'image') {
       prevContainer.image = '';
@@ -54,7 +58,11 @@ class ContainerComponentController {
       })
     }
 
-    this.container = Object.assign({}, this.container, prevContainer);
+    if(this.groupedVolumes.length < 3) {
+      this.container = Object.assign({}, this.container, prevContainer);
+      this.groupedVolumes = this.groupByRow(this.container.volumes);
+    }
+
   }
 
 

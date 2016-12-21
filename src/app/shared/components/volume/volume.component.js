@@ -8,14 +8,14 @@ class VolumeController {
 
     this.port = {
       name: 'newVolume'
-    }
+    };
 
     $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.port = Object.assign({}, this.port, data);
     })
   }
 
-  $onInit() {
+  $onInit(){
     console.log(this.port);
   }
 }

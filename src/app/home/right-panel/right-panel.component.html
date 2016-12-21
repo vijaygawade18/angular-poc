@@ -37,7 +37,7 @@
 <script type="text/ng-template" id="container-info.html">
   <div ng-repeat="templateItem in $ctrl.templateData">
     <div class="container-info-heading">
-      <label>Container 1</label><i class="delete-icon"></i>
+      <label>Container {{$index + 1}}</label><i class="delete-icon"></i>
     </div>
     <div class="form-group">
       <label>Name</label>
@@ -54,7 +54,7 @@
 <script type="text/ng-template" id="volume-info.html">
   <div ng-repeat="volumeItem in $ctrl.templateData">
     <div class="volume-heading">
-      <label>Volume 1</label><i class="delete-icon"></i>
+      <label>Volume {{$index + 1}}</label><i class="delete-icon"></i>
     </div>
     <div class="form-group">
       <label>Name</label>
