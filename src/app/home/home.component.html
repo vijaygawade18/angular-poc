@@ -3,16 +3,13 @@
     <left></left>
   </div>
   <div class="col-md-7 col-lg-7 no-right-padding ">
-    <div class="middle-section"
-    drag-hover-class="animate-on-hover"
-    ui-on-drop="$ctrl.onDropOverMainContent($event, $data);"
-    drop-channel="tier">
+    <div class="middle-section" drag-hover-class="animate-on-hover" ui-on-drop="$ctrl.onDropOverMainContent($event, $data);"
+      drop-channel="tier">
       <!-- repeat tiers -->
-      <tier
-        data="tier"
-        tier-index="{{$index + 1}}"
-       ng-repeat="tier in $ctrl.tiers;"></tier>
+      <tier data="tier" tier-index="{{$index + 1}}" ng-repeat="tier in $ctrl.tiers;"></tier>
     </div>
+
+    <svg class="connector" width="0" height="0"></svg>
   </div>
   <div class="col-md-3 col-lg-3 no-padding">
     <right class="animate-show"></right>

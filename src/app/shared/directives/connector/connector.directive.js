@@ -23,21 +23,25 @@ ConnectorController.$inject = []
 export const ConnectorDirective = () => {
     return {
         restrict: 'A',
-        scope: {
-            draw: '@'
-        },
+        bindToController: true,
+        controller: ConnectorController,
         link: function (scope, ele, attrs, ctrl) {
-            debugger;
             attrs.$observe('draw', (drawConnector = false) => {
                 if (drawConnector == 'true') {
-                debugger;
-                let svg = ele.querySelector('.connector')
-                    // let svg = angular.element(ele).find('.connector');
-                    // let tier = angular.element(ele).find('tier');
-                    // let network = angular.element(ele).find('network');
-                    // let path = ctrl.createPath(angular.element(ele).find('.connector'));
+                    debugger;
+                    let parentEle = ele[0];
 
-                    // connectElements(ele, svg, path, network, tier )
+                    let svg = angular.element(document.querySelector('.connector'));
+
+                    let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
+
+                    let network = angular.element(parentEle.querySelector('.network-block'));
+
+                    let svgContainer = angular.element(document.querySelector('.middle-section'))
+
+                    let path = ctrl.createPath(svg[0]);
+
+                    connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
                 }
             })
         }
