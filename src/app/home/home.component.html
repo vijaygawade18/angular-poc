@@ -1,8 +1,8 @@
 <div class="container-fluid app-wrapper">
-  <div class="col-md-2 col-lg-2">
+  <div class="left-panel-wrapper col-md-2 col-lg-2">
     <left></left>
   </div>
-  <div class="col-md-7 col-lg-7 no-right-padding ">
+  <div class="middle-section-wrapper no-right-padding ">
     <div class="middle-section" drag-hover-class="animate-on-hover" ui-on-drop="$ctrl.onDropOverMainContent($event, $data);"
       drop-channel="tier">
       <!-- repeat tiers -->
@@ -11,7 +11,7 @@
     </div>
     
   </div>
-  <div class="col-md-3 col-lg-3 no-padding">
+  <div class="right-panel-wrapper no-padding">
     <right class="animate-show"></right>
   </div>
 </div>
