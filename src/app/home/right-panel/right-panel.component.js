@@ -1,6 +1,6 @@
 'use strict';
 
-// require('./right-panel.component.css');
+import { MOCK_DATA } from './shared';
 
 class RightPanelController {
 
@@ -9,6 +9,7 @@ class RightPanelController {
 
     this.currentTpl = '';
     this.templateData = '';
+    this.yamlData = '';
 
     $rootScope.$on('event:showInfo', (evt, args) => {
       let { type, data, isVisible } = args;
@@ -17,6 +18,7 @@ class RightPanelController {
 
       this.templateData = data;
       this.currentTpl = this.getTemplateByType(type);
+      this.yamlData = MOCK_DATA;
     });
   }
 
