@@ -1,5 +1,9 @@
 'use strict';
 
+const MAX_VOLUME_STACK = 2;
+const MAX_VOLUME_SIZE = 16;
+const MAX_COLS_PER_ROW = 8;
+
 class ContainerComponentController {
   constructor($scope) {
     this.scope = $scope;
@@ -25,17 +29,16 @@ class ContainerComponentController {
   }
 
   $onChanges(simpleChange) {
-    if (simpleChange[ 'data' ] && simpleChange[ 'data' ].currentValue) {
-      this.container = simpleChange[ 'data' ].currentValue;
+    if (simpleChange['data'] && simpleChange['data'].currentValue) {
+      this.container = simpleChange['data'].currentValue;
     }
   }
 
   onDropOverContainer(evt, data) {
-
     let prevContainer = this.container;
 
     if (data == 'volume') {
-      if(prevContainer.volumes.length <= 15){
+      if (prevContainer.volumes.length < MAX_VOLUME_SIZE) {
         prevContainer.volumes.push({
           name: 'new volume',
           readonly: false,
@@ -58,11 +61,12 @@ class ContainerComponentController {
       })
     }
 
-    if(this.groupedVolumes.length < 3) {
+    if (this.groupedVolumes.length <= MAX_VOLUME_STACK) {
       this.container = Object.assign({}, this.container, prevContainer);
-      this.groupedVolumes = this.groupByRow(this.container.volumes);
-    }
+      this.totalVolumeSize = this.container.volumes.length;
 
+      this.groupedVolumes = this.groupByRow(prevContainer.volumes, MAX_COLS_PER_ROW);
+    }
   }
 
 
@@ -106,7 +110,7 @@ class ContainerComponentController {
   }
 }
 
-ContainerComponentController.$inject = [ '$scope' ];
+ContainerComponentController.$inject = ['$scope'];
 
 export const ContainerComponent = {
   bindings: {

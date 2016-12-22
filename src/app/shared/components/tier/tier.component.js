@@ -63,10 +63,6 @@ class TierComponentController {
     evt.stopPropagation();
   }
 
-  onPostInformationUpdate() {
-
-  }
-
   showDetails() {
     this.isDetailsPanelVisible = !this.isDetailsPanelVisible;
 
