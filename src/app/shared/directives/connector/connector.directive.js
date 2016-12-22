@@ -26,24 +26,29 @@ export const ConnectorDirective = () => {
         bindToController: true,
         controller: ConnectorController,
         link: function (scope, ele, attrs, ctrl) {
+
+            let svg = angular.element(document.querySelector('.connector'));
+            let path = ctrl.createPath(svg[0]);
+
             attrs.$observe('draw', (drawConnector = false) => {
                 if (drawConnector == 'true') {
-                    debugger;
-                    let parentEle = ele[0];
-
-                    let svg = angular.element(document.querySelector('.connector'));
-
-                    let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
-
-                    let network = angular.element(parentEle.querySelector('.network-block'));
-
-                    let svgContainer = angular.element(document.querySelector('.middle-section'))
-
-                    let path = ctrl.createPath(svg[0]);
-
-                    connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
+                  joinElement()
                 }
             })
+
+            function joinElement(){
+
+              let parentEle = ele[0];
+
+              let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
+
+              let network = angular.element(parentEle.querySelector('.network-block'));
+
+              let svgContainer = angular.element(document.querySelector('.middle-section'))
+
+              connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
+
+            }
         }
     }
 }

@@ -19,9 +19,13 @@ class TierComponentController {
     this.tier = this.data;
   }
 
+  updateConnectingLines() {
+    
+  }
+
   onDropOverTier(evt, data) {
     let prevObj = this.tier;
-
+    this.updateConnectingLines();
     if (data == 'container') {
       prevObj.containers.push({
         name: 'new container',
@@ -39,6 +43,7 @@ class TierComponentController {
         protocol: 'test'
       });
     }
+
     this.tier = Object.assign({}, this.tier, prevObj);
   }
 
@@ -88,7 +93,6 @@ class TierComponentController {
   onPostInformationUpdate() {
 
   }
-
 }
 
 TierComponentController.$inject = ['$scope'];

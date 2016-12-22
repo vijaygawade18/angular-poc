@@ -236,6 +236,28 @@ nav a.active {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
+}
+tier{
+  z-index: 10;
+}
+.middle-section svg{
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.middle-section svg path{
+  fill: none;
+  stroke: #f8d6da;
+  stroke-width: 3px;
+  stroke-dasharray: 5;
+  animation: dash 20s linear infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
 }
 
 .middle-section .network-block {
