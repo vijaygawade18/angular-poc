@@ -3,12 +3,13 @@
   <div class="panel panel-default template-animation tier-wrapper bounce-in-animation animated"
     ng-click="$ctrl.showDetails();" ui-on-drop="$ctrl.onDropOverTier($event, $data);"
     drop-channel="container, port">
+    <div class="tier-connector"></div>
     <div class="tier-badge">{{$ctrl.tierIndex}}</div>
     <div class="panel-heading">
       <h4 class="panel-title">{{$ctrl.tier.name}}</h4>
     </div>
     <div class="panel-body">
-      <div class="tier-connector"></div>
+      <div class="no-container" ng-if="$ctrl.tier.containers.length == 0 ">No container added</div>
       <!-- repeat containers -->
       <container data="container" ng-repeat="container in $ctrl.tier.containers">
       </container>

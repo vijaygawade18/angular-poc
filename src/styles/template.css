@@ -401,21 +401,43 @@ nav a.active {
   width: 145px;
 }
 
-.middle-section .tier-wrapper .panel-body .tier-connector {
+.middle-section .tier-wrapper .panel-body .no-container {
+  font-size: 12px;
+  padding: 20px;
+  color: #666c71;
+}
+
+.middle-section .tier-wrapper .tier-connector {
   background-color: #e3effa;
   width: 20px;
   height: 45px;
   position: absolute;
-  top: 50%;
+  bottom: 30%;
   border-radius: 10px;
 }
 
-.middle-section tier:nth-child(odd) .panel-body .tier-connector {
+.middle-section tier:nth-child(odd) .tier-connector {
   right: -10px;
 }
 
-.middle-section tier:nth-child(even) .panel-body .tier-connector {
+.middle-section tier:nth-child(even) .tier-connector {
   left: -10px;
+}
+
+.middle-section .tier-body .volume-count {
+  position: relative;
+  top: 28px;
+  left: 10px;
+  font-size: 12px;
+  background: #fff;
+  color: #000;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 0px #ccd7e1;
+  float: left;
 }
 
 
