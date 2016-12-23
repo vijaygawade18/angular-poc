@@ -1,6 +1,5 @@
 body {
   background-image: url('/resources/images/bg.png');
-  background-size: 100% 100%;
 }
 
 header {
@@ -234,39 +233,46 @@ nav a.active {
 /*Middle section css*/
 
 .middle-section {
-  padding-right: 0;
+  width: 65%;
+  float: left;
+  margin-left: 20px;
   min-height: 545px;
   background: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
+  padding: 100px 20px 20px;
 }
-tier{
+
+tier {
   z-index: 10;
 }
-.middle-section svg{
+
+.middle-section svg {
   z-index: 0;
   position: absolute;
   left: 0;
   top: 0;
 }
-.middle-section svg path{
+
+.middle-section svg path {
   fill: none;
   stroke: #f8d6da;
   stroke-width: 3px;
   stroke-dasharray: 5;
   animation: dash 20s linear infinite;
 }
+
 @keyframes dash {
   to {
     stroke-dashoffset: 1000;
   }
 }
 
+.middle-section .network-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 70px;
+}
+
 .middle-section .network-block {
-  background: #f8d6da;
   padding: 12px 18px;
   border-radius: 5px;
   text-align: center;
@@ -276,22 +282,76 @@ tier{
   display: inline-flex;
 }
 
-.middle-section .tier-wrapper {
+.middle-section .network-block.block-orange {
+  background: #f8d6da;
+}
+
+.middle-section .network-block.block-green {
+  background: #bbe4d3;
+}
+
+.middle-section .network-block.block-blue {
+  background: #e3d0f1;
+}
+
+.middle-section tier {
+  width: 40%;
+}
+
+.middle-section .tier-vm-render-area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.middle-section .tier-wrapper,
+.middle-section .vm-wrapper {
   background: #e3effa;
   border-radius: 5px;
   border: 0;
-  min-width: 275px;
   margin-bottom: 50px;
 }
 
-.middle-section .tier-wrapper .panel-body .panel {
+.middle-section .vm-wrapper {
+  background: #e9f9c3;
+}
+
+.middle-section .tier-wrapper::after,
+.middle-section .vm-wrapper::after {
+  content: "";
+  background-color: #e3effa;
+  width: 20px;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  border-radius: 10px;
+  margin-top: -22px;
+}
+
+.middle-section .vm-wrapper::after {
+  background: #e9f9c3;
+}
+
+.middle-section tier:nth-child(odd) .tier-wrapper::after,
+.middle-section vm:nth-child(odd) .vm-wrapper::after {
+  right: -10px;
+}
+
+.middle-section tier:nth-child(even) .tier-wrapper::after,
+.middle-section vm:nth-child(even) .vm-wrapper::after {
+  left: -10px;
+}
+
+.middle-section .tier-wrapper .panel-body .panel,
+.middle-section .vm-wrapper .panel-body .panel {
   background: none;
   box-shadow: none;
   border: 0;
   margin: 35px 0;
 }
 
-.middle-section .tier-wrapper .panel-heading {
+.middle-section .tier-wrapper .panel-heading,
+.middle-section .vm-wrapper .panel-heading {
   background: none;
   border: 0;
   text-align: center;
@@ -299,13 +359,15 @@ tier{
   padding: 0;
 }
 
-.middle-section .tier-wrapper .panel-heading .panel-title {
+.middle-section .tier-wrapper .panel-heading .panel-title,
+.middle-section .vm-wrapper .panel-heading .panel-title {
   color: #666c71;
   font-size: 14px;
   font-weight: normal;
 }
 
-.middle-section .tier-wrapper .panel-body .volume-wrapper {
+.middle-section .tier-wrapper .panel-body .volume-wrapper,
+.middle-section .vm-wrapper .panel-body .volume-wrapper {
   width: 41px;
   height: 46px;
 }
@@ -317,11 +379,13 @@ tier{
   width: 40px;
 }
 
-.tier-wrapper .panel-body .volPosLeft {
+.tier-wrapper .panel-body .volPosLeft,
+.vm-wrapper .panel-body .volPosLeft {
   left: 4px;
 }
 
-.tier-wrapper .panel-body .volume-wrapper .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper .volume-icon {
   width: 20px;
   height: 15px;
   background-image: url('/resources/images/volume-icon.png');
@@ -330,7 +394,8 @@ tier{
   left: 18px;
 }
 
-.tier-wrapper .panel-body .vol-icon-shadow {
+.tier-wrapper .panel-body .vol-icon-shadow,
+.vm-wrapper .panel-body .vol-icon-shadow {
   width: 44px;
   height: 17px;
   background-image: url(/resources/images/vol-shadow.png);
@@ -340,47 +405,56 @@ tier{
   top: 36px;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(1) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(1) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(1) .volume-icon {
   bottom: 0;
   z-index: 1;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(2) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(2) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(2) .volume-icon {
   bottom: 7px;
   z-index: 2;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(3) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(3) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(3) .volume-icon {
   bottom: 14px;
   z-index: 3;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(4) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(4) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(4) .volume-icon {
   bottom: 21px;
   z-index: 4;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(5) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(5) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(5) .volume-icon {
   bottom: 28px;
   z-index: 5;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(6) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(6) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(6) .volume-icon {
   bottom: 35px;
   z-index: 5;
 }
 
-.tier-wrapper .panel-body .volume-wrapper volume:nth-child(7) .volume-icon {
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(7) .volume-icon,
+.vm-wrapper .panel-body .volume-wrapper volume:nth-child(7) .volume-icon {
   bottom: 42px;
   z-index: 5;
 }
 
+.tier-wrapper .panel-body .volume-wrapper volume:nth-child(8) .volume-icon,
 .tier-wrapper .panel-body .volume-wrapper volume:nth-child(8) .volume-icon {
   bottom: 49px;
   z-index: 5;
 }
 
-.tier-wrapper .external-port-icon {
+.tier-wrapper .external-port-icon,
+.vm-wrapper .external-port-icon {
   width: 18px;
   height: 14px;
   background-image: url('/resources/images/ext-port.png');
@@ -390,7 +464,8 @@ tier{
   margin-top: -7px;
 }
 
-.tier-wrapper .internal-port-icon {
+.tier-wrapper .internal-port-icon,
+.vm-wrapper .internal-port-icon {
   width: 18px;
   height: 14px;
   background-image: url('/resources/images/int-port.png');
@@ -400,7 +475,8 @@ tier{
   margin-top: -7px;
 }
 
-.tier-badge {
+.tier-badge,
+.vm-badge {
   position: relative;
   top: -2px;
   left: -5px;
@@ -415,10 +491,8 @@ tier{
   border: 4px solid #fff;
 }
 
-.middle-section-wrapper {
-  width: 65%;
-  float: left;
-  padding-left: 20px;
+.vm-badge {
+  background: #e9f9c3;
 }
 
 .middle-section .tier-wrapper .panel-body .img-container {
@@ -431,7 +505,6 @@ tier{
   border-radius: 5px;
   font-size: 12px;
   justify-content: center;
-  width: 145px;
 }
 
 .middle-section .tier-wrapper .panel-body .no-container {
@@ -440,24 +513,8 @@ tier{
   color: #666c71;
 }
 
-.middle-section .tier-wrapper .tier-connector {
-  background-color: #e3effa;
-  width: 20px;
-  height: 45px;
-  position: absolute;
-  bottom: 30%;
-  border-radius: 10px;
-}
-
-.middle-section tier:nth-child(odd) .tier-connector {
-  right: -10px;
-}
-
-.middle-section tier:nth-child(even) .tier-connector {
-  left: -10px;
-}
-
-.middle-section .tier-body .volume-count {
+.middle-section .tier-body .volume-count,
+.middle-section .vm-body .volume-count {
   position: relative;
   top: 28px;
   left: 10px;
@@ -473,15 +530,8 @@ tier{
   float: left;
 }
 
-
-/* Animation of ngAnimate */
-
-.template-animation {
-  transition: all linear 0.5s;
-}
-
 .right-panel-wrapper {
-  width: 20%;
+  width: 19%;
   float: left;
 }
 
@@ -498,8 +548,8 @@ tier{
   padding: 20px 30px;
 }
 
-.right-panel .tab-content .tab-pane {
-  padding: 0 10px;
+.right-panel .yaml-content-wrapper {
+  font-size: 12px;
 }
 
 .right-panel .tab-content .tab-pane .tier-detail-heading,
@@ -558,6 +608,7 @@ ul.nav.nav-tabs a {
 .right-panel ul.nav.nav-tabs li > a {
   background-color: #d0d4dc;
   font-size: 13px;
+  margin: 0;
 }
 
 .right-panel ul.nav.nav-tabs li.active > a {
@@ -571,8 +622,9 @@ ul.nav.nav-tabs a {
   border-radius: 0;
   border: 0;
 }
-.right-panel #yaml .padding-left20{
-  padding-left:20px;
+
+.right-panel #yaml .padding-left20 {
+  padding-left: 20px;
 }
 
 .animate-show {
@@ -681,6 +733,15 @@ ul.nav.nav-tabs a {
   }
 }
 
+@keyframes volumeanimate {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -696,4 +757,68 @@ ul.nav.nav-tabs a {
 .bounce-down-animation {
   -webkit-animation-name: bounceInDown;
   animation-name: bounceInDown;
+}
+
+container > .panel.on-drag-enter .volume-icon-drop-area,
+container > .panel.on-drag-hover .volume-icon-drop-area {
+  animation: fade-animation 0.8s linear infinite;
+  -webkit-animation: fade-animation 0.8s linear infinite;
+}
+
+
+/* Animation of ngAnimate */
+
+.template-animation.on-drag-enter,
+.template-animation.on-drag-hover {
+  animation: fade-animation 0.8s linear infinite;
+  -webkit-animation: fade-animation 0.8s linear infinite;
+}
+
+.template-animation.on-drag-enter::after,
+.template-animation.on-drag-hover::after {
+  animation: connector-fade-animation 0.8s linear infinite;
+  -webkit-animation: connector-fade-animation 0.8s linear infinite;
+}
+
+@keyframes connector-fade-animation {
+  from {
+    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes fade-animation {
+  from {
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.template-animation {
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
+}
+
+.template-animation::after {
+  box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.15);
+}
+
+.volume-icon-drop-area {
+  width: 32px;
+  height: 17px;
+  position: absolute;
+  left: 12px;
+  top: 36px;
+  border-radius: 50%;
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
 }

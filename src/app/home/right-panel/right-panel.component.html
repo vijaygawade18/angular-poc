@@ -12,110 +12,109 @@
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="yaml">
-      <div class="">
-          <span>tiers:</span>
-          <div class="padding-left20">
-              <div>
-                -<span>name:</span><span> {{$ctrl.yamlData.tiers.name}}</span>
-              </div>
-              <div>
-                <span>type:</span><span> {{$ctrl.yamlData.tiers.type}}</span>
-              </div>
-              <div>
-                <span>replicas:</span><span> {{$ctrl.yamlData.tiers.replicas}}</span>
-              </div>
-              <div>
-                <span>containers:</span>
-              </div>
-              <div class="padding-left20">
-                  <div>
-                    -<span>name:</span><span> {{$ctrl.yamlData.tiers.containers.name}}</span>
-                  </div>
-                  <div>
-                    <span>image:</span><span> {{$ctrl.yamlData.tierscontainers.type}}</span>
-                  </div>
-                  <div>
-                    <span>environment:</span><span> {{$ctrl.yamlData.tiers.containers.environment}}</span>
-                  </div>
-                  <div>
-                    <span>ports:</span>
-                  </div>
-                  <div class="padding-left20">
-                      <div>
-                       -  <span>containerPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.containerPorts}}</span>
-                      </div>
-                      <div>
-                        <span>service:</span><span> {{$ctrl.yamlData.tiers.containers.ports.service}}</span>
-                      </div>
-                      <div>
-                        <span>servicePort:</span><span> {{$ctrl.yamlData.tiers.containers.ports.servicePort}}</span>
-                      </div>
-                      <div>
-                        <span>hostPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.hostPorts}}</span>
-                      </div>
-                      <div>
-                        <span>name:</span><span> {{$ctrl.yamlData.tiers.containers.ports.name}}</span>
-                      </div>
-                      <div>
-                        <span>protocol:</span><span> {{$ctrl.yamlData.tiers.containers.ports.protocol}}</span>
-                      </div>
-                      <div>
-                        <span>url:</span><span> {{$ctrl.yamlData.tiers.containers.ports.url}}</span>
-                      </div>
-                      <div>
-                      -  <span>containerPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.containerPorts}}</span>
-                      </div>
-                      <div>
-                        <span>service:</span><span> {{$ctrl.yamlData.tiers.containers.ports.service}}</span>
-                      </div>
-                      <div>
-                        <span>servicePort:</span><span> {{$ctrl.yamlData.tiers.containers.ports.servicePort}}</span>
-                      </div>
-                      <div>
-                        <span>hostPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.hostPorts}}</span>
-                      </div>
-                      <div>
-                        <span>name:</span><span> {{$ctrl.yamlData.tiers.containers.ports.name}}</span>
-                      </div>
-                      <div>
-                        <span>protocol:</span><span> {{$ctrl.yamlData.tiers.containers.ports.protocol}}</span>
-                      </div>
-                      <div>
-                        <span>url:</span><span> {{$ctrl.yamlData.tiers.containers.ports.url}}</span>
-                      </div>
-                  </div>
-
-                  <div>
-                    <span>volumes:</span>
-                  </div>
-                  <div class="padding-left20">
-                    <div>
-                      -  <span>containerVolume:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.containerVolume}}</span>
-                    </div>
-                    <div>
-                      <span>readOnly:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.readOnly}}</span>
-                    </div>
-                    <div>
-                      <span>minSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.minSize}}</span>
-                    </div>
-                    <div>
-                      <span>maxSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.maxSize}}</span>
-                    </div>
-                    <div>
-                      -  <span>containerVolume:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.containerVolume}}</span>
-                    </div>
-                    <div>
-                      <span>readOnly:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.readOnly}}</span>
-                    </div>
-                    <div>
-                      <span>minSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.minSize}}</span>
-                    </div>
-                    <div>
-                      <span>maxSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.maxSize}}</span>
-                    </div>
-                  </div>
-              </div>
+      <div class="yaml-content-wrapper">
+        <span>tiers:</span>
+        <div class="padding-left20">
+          <div>
+            -<span>name:</span><span> {{$ctrl.yamlData.tiers.name}}</span>
           </div>
+          <div>
+            <span>type:</span><span> {{$ctrl.yamlData.tiers.type}}</span>
+          </div>
+          <div>
+            <span>replicas:</span><span> {{$ctrl.yamlData.tiers.replicas}}</span>
+          </div>
+          <div>
+            <span>containers:</span>
+          </div>
+          <div class="padding-left20">
+            <div>
+              -<span>name:</span><span> {{$ctrl.yamlData.tiers.containers.name}}</span>
+            </div>
+            <div>
+              <span>image:</span><span> {{$ctrl.yamlData.tierscontainers.type}}</span>
+            </div>
+            <div>
+              <span>environment:</span><span> {{$ctrl.yamlData.tiers.containers.environment}}</span>
+            </div>
+            <div>
+              <span>ports:</span>
+            </div>
+            <div class="padding-left20">
+              <div>
+                - <span>containerPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.containerPorts}}</span>
+              </div>
+              <div>
+                <span>service:</span><span> {{$ctrl.yamlData.tiers.containers.ports.service}}</span>
+              </div>
+              <div>
+                <span>servicePort:</span><span> {{$ctrl.yamlData.tiers.containers.ports.servicePort}}</span>
+              </div>
+              <div>
+                <span>hostPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.hostPorts}}</span>
+              </div>
+              <div>
+                <span>name:</span><span> {{$ctrl.yamlData.tiers.containers.ports.name}}</span>
+              </div>
+              <div>
+                <span>protocol:</span><span> {{$ctrl.yamlData.tiers.containers.ports.protocol}}</span>
+              </div>
+              <div>
+                <span>url:</span><span> {{$ctrl.yamlData.tiers.containers.ports.url}}</span>
+              </div>
+              <div>
+                - <span>containerPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.containerPorts}}</span>
+              </div>
+              <div>
+                <span>service:</span><span> {{$ctrl.yamlData.tiers.containers.ports.service}}</span>
+              </div>
+              <div>
+                <span>servicePort:</span><span> {{$ctrl.yamlData.tiers.containers.ports.servicePort}}</span>
+              </div>
+              <div>
+                <span>hostPorts:</span><span> {{$ctrl.yamlData.tiers.containers.ports.hostPorts}}</span>
+              </div>
+              <div>
+                <span>name:</span><span> {{$ctrl.yamlData.tiers.containers.ports.name}}</span>
+              </div>
+              <div>
+                <span>protocol:</span><span> {{$ctrl.yamlData.tiers.containers.ports.protocol}}</span>
+              </div>
+              <div>
+                <span>url:</span><span> {{$ctrl.yamlData.tiers.containers.ports.url}}</span>
+              </div>
+            </div>
+            <div>
+              <span>volumes:</span>
+            </div>
+            <div class="padding-left20">
+              <div>
+                - <span>containerVolume:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.containerVolume}}</span>
+              </div>
+              <div>
+                <span>readOnly:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.readOnly}}</span>
+              </div>
+              <div>
+                <span>minSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.minSize}}</span>
+              </div>
+              <div>
+                <span>maxSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.maxSize}}</span>
+              </div>
+              <div>
+                - <span>containerVolume:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.containerVolume}}</span>
+              </div>
+              <div>
+                <span>readOnly:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.readOnly}}</span>
+              </div>
+              <div>
+                <span>minSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.minSize}}</span>
+              </div>
+              <div>
+                <span>maxSize:</span><span> {{$ctrl.yamlData.tiers.containers.volumes.maxSize}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
