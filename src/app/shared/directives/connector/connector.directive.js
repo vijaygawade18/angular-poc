@@ -38,15 +38,15 @@ export const ConnectorDirective = () => {
 
             function joinElement(){
 
-              let parentEle = ele[0];
+              // let parentEle = ele[0];
 
-              let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
+              // let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
 
-              let network = angular.element(parentEle.querySelector('.network-block'));
+              // let network = angular.element(parentEle.querySelector('.network-block'));
 
-              let svgContainer = angular.element(document.querySelector('.middle-section'))
+              // let svgContainer = angular.element(document.querySelector('.middle-section'))
 
-              connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
+              // connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
 
             }
         }

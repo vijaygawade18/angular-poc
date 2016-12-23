@@ -1,0 +1,35 @@
+<div class="text-center">
+  <div class="panel panel-default vm-wrapper bounce-in-animation animated"
+    ng-click="$ctrl.showDetails();" ui-on-drop="$ctrl.onDropOverVM($event, $data);"
+    drop-channel="volume, port">
+    <div class="vm-badge">{{$ctrl.vmIndex}}</div>
+    <div class="panel-heading">
+      <h4 class="panel-title">{{$ctrl.vm.name}}</h4>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-7 clearfix no-right-padding">
+          <div class="policies-container">5 Policies</div>
+        </div>
+        <div class="col-md-5 no-padding">
+          <div class="volume-icon-drop-area volume-vm-drop-area"></div>
+          <div class="volume clearfix" ng-class="$index == 1 ? 'volPosLeft':''" ng-repeat="rows in $ctrl.groupedVolumes track by $index">
+            <div class="volume-wrapper" ng-click="$ctrl.showVolumeDetails($event);">
+              <volume data="volume" ng-repeat="volume in rows track by $index"></volume>
+            </div>
+            <div class="vol-icon-shadow"></div>
+          </div>
+          <div class="volume-count" ng-hide="$ctrl.groupedVolumes.length == 0">{{$ctrl.totalVolumeSize}}</div>
+          <div class="vol-icon-shadow" ng-if="$ctrl.groupedVolumes.length == 0"></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12 clearfix">
+          <port data="port" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.vm.ports">
+          </port>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -298,6 +298,10 @@ tier {
   width: 40%;
 }
 
+.middle-section vm {
+  width: 40%;
+}
+
 .middle-section .tier-vm-render-area {
   display: flex;
   justify-content: space-between;
@@ -310,10 +314,15 @@ tier {
   border-radius: 5px;
   border: 0;
   margin-bottom: 50px;
+  position: relative;
 }
 
 .middle-section .vm-wrapper {
   background: #e9f9c3;
+}
+
+.middle-section .vm-wrapper .panel-body {
+  padding-top: 30px;
 }
 
 .middle-section .tier-wrapper::after,
@@ -366,13 +375,28 @@ tier {
   font-weight: normal;
 }
 
-.middle-section .tier-wrapper .panel-body .volume-wrapper,
-.middle-section .vm-wrapper .panel-body .volume-wrapper {
+.middle-section .tier-wrapper .panel-body .volume-wrapper {
   width: 41px;
   height: 46px;
 }
 
-.tier-wrapper .panel-body .volume {
+.middle-section .vm-wrapper .panel-body .volume-wrapper {
+  width: 41px;
+  height: 31px;
+}
+
+.middle-section .vm-wrapper .panel-body .policies-container {
+  background: #8db1f8;
+  padding: 10px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  float: right;
+}
+
+.tier-wrapper .panel-body .volume,
+.vm-wrapper .panel-body .volume {
   float: left;
   top: 0;
   position: relative;
@@ -394,6 +418,10 @@ tier {
   left: 18px;
 }
 
+.vm-wrapper .panel-body .volume-wrapper .volume-icon {
+  left: 29px;
+}
+
 .tier-wrapper .panel-body .vol-icon-shadow,
 .vm-wrapper .panel-body .vol-icon-shadow {
   width: 44px;
@@ -403,6 +431,18 @@ tier {
   position: absolute;
   left: 0px;
   top: 36px;
+}
+
+.vm-wrapper .panel-body .vol-icon-shadow {
+  width: 33px;
+  height: 17px;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  background: #bccce4;
+  border-radius: 50%;
+  opacity: 0.5;
 }
 
 .tier-wrapper .panel-body .volume-wrapper volume:nth-child(1) .volume-icon,
@@ -514,7 +554,7 @@ tier {
 }
 
 .middle-section .tier-body .volume-count,
-.middle-section .vm-body .volume-count {
+.middle-section .vm-wrapper .volume-count {
   position: relative;
   top: 28px;
   left: 10px;
@@ -528,6 +568,11 @@ tier {
   border-radius: 50%;
   box-shadow: 1px 2px 0px #ccd7e1;
   float: left;
+}
+
+.middle-section .vm-wrapper .volume-count {
+  top: 14px;
+  left: 22px;
 }
 
 .right-panel-wrapper {
@@ -760,7 +805,9 @@ ul.nav.nav-tabs a {
 }
 
 container > .panel.on-drag-enter .volume-icon-drop-area,
-container > .panel.on-drag-hover .volume-icon-drop-area {
+container > .panel.on-drag-hover .volume-icon-drop-area,
+.vm-wrapper.on-drag-enter .volume-icon-drop-area,
+.vm-wrapper.on-drag-hover .volume-icon-drop-area {
   animation: fade-animation 0.8s linear infinite;
   -webkit-animation: fade-animation 0.8s linear infinite;
 }
@@ -774,16 +821,37 @@ container > .panel.on-drag-hover .volume-icon-drop-area {
   -webkit-animation: fade-animation 0.8s linear infinite;
 }
 
-.template-animation.on-drag-enter::after,
-.template-animation.on-drag-hover::after {
-  animation: connector-fade-animation 0.8s linear infinite;
-  -webkit-animation: connector-fade-animation 0.8s linear infinite;
+tier:nth-child(odd) .template-animation.on-drag-enter::after,
+tier:nth-child(odd) .template-animation.on-drag-hover::after,
+vm:nth-child(odd) .template-animation.on-drag-enter::after,
+vm:nth-child(odd) .template-animation.on-drag-hover::after {
+  animation: odd-connector-fade-animation 0.8s linear infinite;
+  -webkit-animation: odd-connector-fade-animation 0.8s linear infinite;
 }
 
-@keyframes connector-fade-animation {
+tier:nth-child(even) .template-animation.on-drag-enter::after,
+tier:nth-child(even) .template-animation.on-drag-hover::after,
+vm:nth-child(even) .template-animation.on-drag-enter::after,
+vm:nth-child(even) .template-animation.on-drag-hover::after {
+  animation: even-connector-fade-animation 0.8s linear infinite;
+  -webkit-animation: even-connector-fade-animation 0.8s linear infinite;
+}
+
+@keyframes odd-connector-fade-animation {
   from {
-    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes even-connector-fade-animation {
+  from {
+    box-shadow: -5px 0px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.5);
   }
   to {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
@@ -807,9 +875,16 @@ container > .panel.on-drag-hover .volume-icon-drop-area {
   -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
 }
 
-.template-animation::after {
+tier:nth-child(odd) .template-animation::after,
+vm:nth-child(odd) .template-animation::after {
   box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.15);
+}
+
+tier:nth-child(even) .template-animation::after,
+vm:nth-child(even) .template-animation::after {
+  box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.15);
 }
 
 .volume-icon-drop-area {
@@ -821,4 +896,9 @@ container > .panel.on-drag-hover .volume-icon-drop-area {
   border-radius: 50%;
   box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
+}
+
+.volume-vm-drop-area {
+  left: 22px;
+  top: 20px;
 }

@@ -26,7 +26,7 @@ class TierComponentController {
 
   onDropOverTier(evt, data) {
     let prevObj = this.tier;
-
+    
     if (data == 'container') {
       this.tier.containers.push({
         id: guid(),

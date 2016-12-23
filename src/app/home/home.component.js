@@ -9,6 +9,7 @@ class HomeController {
 
   constructor() {
     this.tiers = [];
+    this.vms = [];
   }
 
   addTier(tier) {
@@ -20,14 +21,23 @@ class HomeController {
   }
 
   onDropOverMainContent(evt, data) {
-    this.addTier({
-      id: guid(),
-      name: 'New Tier',
-      type: 'app type',
-      replica: 1,
-      containers: [],
-      ports: []
-    })
+    if (data == 'vm') {
+      this.vms.push({
+        id: guid(),
+        name: 'New York VM',
+        type: 'vm',
+        volumes: [],
+        ports: []
+      })
+    } else
+      this.addTier({
+        id: guid(),
+        name: 'New Tier',
+        type: 'app type',
+        replica: 1,
+        containers: [],
+        ports: []
+      })
   }
 }
 
