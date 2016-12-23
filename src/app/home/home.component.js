@@ -1,5 +1,8 @@
 'use strict';
 
+
+import { guid } from '../shared/services'
+
 require('./home.component.css');
 
 class HomeController {
@@ -18,7 +21,8 @@ class HomeController {
 
   onDropOverMainContent(evt, data) {
     this.addTier({
-      name: 'new Tier at home',
+      id: guid(),
+      name: 'New Tier',
       type: 'app type',
       replica: 1,
       containers: [],

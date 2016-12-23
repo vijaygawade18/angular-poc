@@ -28,11 +28,11 @@ class ContainerComponentController {
     this.container = this.data;
   }
 
-  $onChanges(simpleChange) {
-    if (simpleChange['data'] && simpleChange['data'].currentValue) {
-      this.container = simpleChange['data'].currentValue;
-    }
-  }
+  // $onChanges(simpleChange) {
+  //   if (simpleChange['data'] && simpleChange['data'].currentValue) {
+  //     this.container = simpleChange['data'].currentValue;
+  //   }
+  // }
 
   onDropOverContainer(evt, data) {
     let prevContainer = this.container;
@@ -46,6 +46,8 @@ class ContainerComponentController {
           maxsize: 10,
           image: ''
         })
+
+        this.showVolumeDetails();
       }
     }
     else if (data == 'image') {
@@ -59,6 +61,8 @@ class ContainerComponentController {
         hostPort: 0,
         protocol: 'test'
       })
+
+      this.showPortDetails();
     }
 
     if (this.groupedVolumes.length <= MAX_VOLUME_STACK) {
@@ -66,13 +70,12 @@ class ContainerComponentController {
       this.totalVolumeSize = this.container.volumes.length;
 
       this.groupedVolumes = this.groupByRow(prevContainer.volumes, MAX_COLS_PER_ROW);
+
     }
   }
 
 
-  showVolumeDetails(evt) {
-    evt.preventDefault();
-
+  showVolumeDetails() {
     this.isDetailsPanelVisible = true;
 
     this.scope.$emit('event:showInfo', {
@@ -80,19 +83,15 @@ class ContainerComponentController {
       data: this.container.volumes,
       isVisible: this.isDetailsPanelVisible
     })
-    evt.stopPropagation();
   }
 
-  showPortDetails(evt) {
-    evt.preventDefault();
-
+  showPortDetails() {
     this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'port',
       data: this.container.ports,
       isVisible: this.isDetailsPanelVisible
     })
-    evt.stopPropagation();
   }
 
   groupByRow(data, numberOfColPerRow = 4) {

@@ -16,7 +16,7 @@ class VolumeController {
   }
 
   $onInit(){
-    console.log(this.port);
+    
   }
 }
 
