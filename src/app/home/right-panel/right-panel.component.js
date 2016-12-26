@@ -6,6 +6,7 @@ class RightPanelController {
 
   constructor($rootScope) {
     this.isVisible = true;
+    this.$rootScope = $rootScope;
 
     this.currentTpl = '';
     this.templateData = '';
@@ -51,8 +52,14 @@ class RightPanelController {
   }
 
   onInformationUpdate(data) {
-    $rootScope.$broadcast('event:showInfoUpdated', data);
+    this.$rootScope.$broadcast('event:showInfoUpdated', data);
   }
+
+  onDeleteInfo(data) {
+  console.log(data);
+    this.$rootScope.$broadcast('event:showInfoDeleted', data);
+  }
+
 }
 
 RightPanelController.$inject = [ '$rootScope' ];
