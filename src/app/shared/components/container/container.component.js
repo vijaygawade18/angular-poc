@@ -81,7 +81,7 @@ class ContainerComponentController {
   }
 
 
-  showVolumeDetails() {
+  showVolumeDetails(event) {
     this.isDetailsPanelVisible = true;
 
     this.scope.$emit('event:showInfo', {
@@ -89,15 +89,24 @@ class ContainerComponentController {
       data: this.container.volumes,
       isVisible: this.isDetailsPanelVisible
     })
+    this.stopEventPropogation(event);
   }
 
-  showPortDetails() {
+  showPortDetails(event) {
     this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'port',
       data: this.container.ports,
       isVisible: this.isDetailsPanelVisible
     })
+    this.stopEventPropogation(event);
+  }
+  // To stop event propogation
+  stopEventPropogation(event) {
+    if(!!event){
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
 
   groupByRow(data, numberOfColPerRow = 4) {

@@ -54,33 +54,43 @@ class TierComponentController {
     //this.tier = Object.assign({}, this.tier, prevObj);
   }
 
-  showDetails() {
+  showDetails(event) {
     this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'tier',
       data: this.tier,
       isVisible: this.isDetailsPanelVisible
     })
+    this.stopEventPropogation(event);
   }
 
-  showContainerDetails() {
-
+  showContainerDetails(event) {
     this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'container',
       data: this.tier.containers,
       isVisible: this.isDetailsPanelVisible
     })
+    this.stopEventPropogation(event);
   }
 
-  showPortDetails() {
+  showPortDetails(event) {
     this.isDetailsPanelVisible = true;
     this.scope.$emit('event:showInfo', {
       type: 'port',
       data: this.tier.ports,
       isVisible: this.isDetailsPanelVisible
     })
+    this.stopEventPropogation(event);
   }
+
+  stopEventPropogation(event) {
+      if(!!event){
+        event.stopPropagation();
+        event.preventDefault();
+      }
+  }
+
 }
 
 TierComponentController.$inject = ['$scope'];
