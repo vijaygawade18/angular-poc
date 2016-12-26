@@ -6,6 +6,25 @@ header {
   background-image: url('/resources/images/header.png');
   background-size: 100% 100%;
   height: 56px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+footer {
+  background-image: url('/resources/images/footer.png');
+  height: 30px;
+  background-size: 100% 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.app-parent-container {
+  padding-top: 56px;
+  padding-bottom: 40px;
 }
 
 .app-wrapper {
@@ -232,13 +251,27 @@ nav a.active {
 
 /*Middle section css*/
 
+.add-tier-container {
+  padding: 20px;
+  border: 1px dashed #c5c5c5;
+  width: 100%;
+  height: 200px;
+  color: #c5c5c5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
 .middle-section {
   width: 65%;
   float: left;
   margin-left: 20px;
-  min-height: 545px;
   background: #fff;
   padding: 100px 20px 20px;
+  max-height: 525px;
+  overflow: auto;
+  min-height: 525px;
 }
 
 tier {
@@ -583,9 +616,9 @@ tier {
 .right-panel {
   height: 100%;
   background-color: #f3f3f3;
-  min-height: 200px;
+  min-height: 525px;
   border-left: 1px solid #c5c5c5;
-  max-height: 635px;
+  max-height: 525px;
   overflow: auto;
 }
 
@@ -816,14 +849,18 @@ container > .panel.on-drag-hover .volume-icon-drop-area,
   animation: slideInRight 1.5s linear;
   -webkit-animation: slideInRight 1.5s linear;
 }
+
+
 /*.volume-info-wrapper {
   animation: slideInDown 1s linear;
   -webkit-animation: slideInDown 1s linear;
 }*/
+
 .volume-info-wrapper .volume-info-block {
   animation: slideInUp 0.6s linear;
   -webkit-animation: slideInUp 0.6s linear;
 }
+
 .template-animation.on-drag-enter,
 .template-animation.on-drag-hover {
   animation: fade-animation 0.8s linear infinite;
@@ -878,31 +915,32 @@ vm:nth-child(even) .template-animation.on-drag-hover::after {
     -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
   }
 }
+
 @keyframes slideInUp {
   from {
     -webkit-transform: translate3d(0, 50%, 0);
     transform: translate3d(0, 50%, 0);
     opacity: 0;
   }
-
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
+
 @keyframes slideInDown {
   from {
     -webkit-transform: translate3d(0, 0px, 0);
     transform: translate3d(0, 0px, 0);
     visibility: visible;
   }
-
   to {
     -webkit-transform: translate3d(0, 100px, 0);
     transform: translate3d(0, 100px, 0);
   }
 }
+
 @-webkit-keyframes slideInRight {
   from {
     -webkit-transform: translate3d(100%, 0, 0);
