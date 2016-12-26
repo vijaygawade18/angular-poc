@@ -12,7 +12,6 @@
       <!-- repeat containers -->
       <container data="container" ng-repeat="container in $ctrl.tier.containers track by container.id"
         ng-click="$ctrl.showContainerDetails($event)">
-      </container>
     </div>
     <!-- repeat ports -->
     <port data="port" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.tier.ports track by port.id">

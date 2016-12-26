@@ -15,7 +15,8 @@ class RightPanelController {
       let { type, data, isVisible } = args;
       this.isVisible = isVisible;
       if (!this.isVisible) return;
-
+      //this.templateData = data;
+    
       if(!(data instanceof Array)) {
         this.templateData = [ data ];
       } else {
