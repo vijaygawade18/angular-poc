@@ -837,10 +837,16 @@ ul.nav.nav-tabs a {
   animation-name: bounceInDown;
 }
 
-container > .panel.on-drag-enter .volume-icon-drop-area,
-container > .panel.on-drag-hover .volume-icon-drop-area,
+tier .template-animation.on-drag-enter .volume-icon-drop-area,
+tier .template-animation.on-drag-hover .volume-icon-drop-area {
+  visibility: hidden;
+}
+
+.tier-content-wrapper.on-drag-enter .volume-icon-drop-area,
+.tier-content-wrapper.on-drag-hover .volume-icon-drop-area,
 .vm-wrapper.on-drag-enter .volume-icon-drop-area,
 .vm-wrapper.on-drag-hover .volume-icon-drop-area {
+  visibility: visible;
   animation: fade-animation 0.8s linear infinite;
   -webkit-animation: fade-animation 0.8s linear infinite;
 }
@@ -988,6 +994,7 @@ vm:nth-child(even) .template-animation::after {
   border-radius: 50%;
   box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 0px 11px rgba(0, 0, 0, 0.15);
+  visibility: hidden;
 }
 
 .volume-vm-drop-area {

@@ -1,4 +1,4 @@
-<div class="panel panel-default" ui-on-drop="$ctrl.onDropOverContainer($event, $data)"
+<div class="panel panel-default tier-content-wrapper" ui-on-drop="$ctrl.onDropOverContainer($event, $data)"
   drop-channel="image, volume, port">
   <div class="tier-body">
     <div class="row">
@@ -9,11 +9,11 @@
         <div class="volume-icon-drop-area"></div>
         <div class="volume clearfix" ng-class="$index == 1 ? 'volPosLeft':''" ng-repeat="rows in $ctrl.groupedVolumes track by $index">
           <div class="volume-wrapper" ng-click="$ctrl.showVolumeDetails($event);">
-            <volume data="volume" ng-repeat="volume in rows track by $index"></volume>
+            <volume data="volume" ng-repeat="volume in rows track by $index" class="bounce-down-animation animated"></volume>
           </div>
           <div class="vol-icon-shadow"></div>
         </div>
-        <div class="volume-count" ng-hide="$ctrl.groupedVolumes.length == 0">{{$ctrl.totalVolumeSize}}</div>
+        <div class="volume-count" ng-if="$ctrl.totalVolumeSize">{{$ctrl.totalVolumeSize}}</div>
         <div class="vol-icon-shadow" ng-if="$ctrl.groupedVolumes.length == 0"></div>
       </div>
     </div>
