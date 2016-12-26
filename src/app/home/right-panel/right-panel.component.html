@@ -121,26 +121,28 @@
 </div>
 <!-- tier details templates -->
 <script type="text/ng-template" id="tier-info.html">
-  <div class="tier-detail-heading">
-    <label>Tier Details</label><i class="delete-icon"></i>
-  </div>
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" ng-model="$ctrl.templateData.name" class="form-control" ng-change="onInformationUpdate($event.target.value)">
-  </div>
-  <div class="form-group">
-    <label>Type</label>
-    <input type="text" ng-model="$ctrl.templateData.type" class="form-control" ng-change="onInformationUpdate($event.target.value)">
-  </div>
-  <div class="form-group">
-    <label>Replicas</label>
-    <br>
-    <input class="form-control" ng-model="$ctrl.templateData.replica" type="text" ng-change="onInformationUpdate($event.target.value)">
+  <div class="tier-info-block">
+    <div class="tier-detail-heading">
+      <label>Tier Details</label><i class="delete-icon"></i>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" ng-model="$ctrl.templateData.name" class="form-control" ng-change="onInformationUpdate($event.target.value)">
+    </div>
+    <div class="form-group">
+      <label>Type</label>
+      <input type="text" ng-model="$ctrl.templateData.type" class="form-control" ng-change="onInformationUpdate($event.target.value)">
+    </div>
+    <div class="form-group">
+      <label>Replicas</label>
+      <br>
+      <input class="form-control" ng-model="$ctrl.templateData.replica" type="text" ng-change="onInformationUpdate($event.target.value)">
+    </div>
   </div>
 </script>
 <!-- container details templates -->
 <script type="text/ng-template" id="container-info.html">
-  <div ng-repeat="templateItem in $ctrl.templateData | orderBy:'$index':true">
+  <div ng-repeat="templateItem in $ctrl.templateData | orderBy:'$index':true" class="container-info-block">
     <div class="container-info-heading">
       <label>Container {{$ctrl.templateData.length - $index}}</label><i class="delete-icon"></i>
     </div>
@@ -157,7 +159,8 @@
 </script>
 <!-- volume details templates -->
 <script type="text/ng-template" id="volume-info.html">
-  <div ng-repeat="(idx, volumeItem) in $ctrl.templateData | orderBy:'$index':true" class="volume-info-block">
+  <div ng-repeat="(idx, volumeItem) in $ctrl.templateData | orderBy:'$index':true"
+    class="volume-info-block">
     <div class="volume-heading">
       <label>Volume {{$ctrl.templateData.length - idx}}</label><i class="delete-icon"></i>
     </div>

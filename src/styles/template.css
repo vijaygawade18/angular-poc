@@ -856,7 +856,9 @@ container > .panel.on-drag-hover .volume-icon-drop-area,
   -webkit-animation: slideInDown 1s linear;
 }*/
 
-.volume-info-wrapper .volume-info-block {
+.volume-info-wrapper .volume-info-block,
+.container-info-block,
+.tier-info-block {
   animation: slideInUp 0.6s linear;
   -webkit-animation: slideInUp 0.6s linear;
 }

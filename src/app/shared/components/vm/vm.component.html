@@ -23,12 +23,7 @@
           <div class="vol-icon-shadow" ng-if="$ctrl.groupedVolumes.length == 0"></div>
         </div>
       </div>
-      <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-md-12 clearfix">
-          <port data="port" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.vm.ports">
-          </port>
-        </div>
-      </div>
     </div>
+    <port data="port" type="{{port.type}}" data="port" ng-repeat="port in $ctrl.vm.ports">
+    </port>
   </div>
