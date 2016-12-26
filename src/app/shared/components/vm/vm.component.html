@@ -1,7 +1,6 @@
 <div class="text-center">
-  <div class="panel panel-default vm-wrapper bounce-in-animation animated"
-    ng-click="$ctrl.showDetails();" ui-on-drop="$ctrl.onDropOverVM($event, $data);"
-    drop-channel="volume, port">
+  <div class="panel panel-default vm-wrapper bounce-in-animation animated" ng-click="$ctrl.showDetails();"
+    ui-on-drop="$ctrl.onDropOverVM($event, $data);" drop-channel="volume, port">
     <div class="vm-badge">{{$ctrl.vmIndex}}</div>
     <div class="panel-heading">
       <h4 class="panel-title">{{$ctrl.vm.name}}</h4>
@@ -19,8 +18,8 @@
             </div>
             <div class="vol-icon-shadow"></div>
           </div>
+          <div class="vol-icon-shadow"></div>
           <div class="volume-count" ng-hide="$ctrl.groupedVolumes.length == 0">{{$ctrl.totalVolumeSize}}</div>
-          <div class="vol-icon-shadow" ng-if="$ctrl.groupedVolumes.length == 0"></div>
         </div>
       </div>
       <div class="clearfix"></div>
@@ -32,4 +31,3 @@
       </div>
     </div>
   </div>
-</div>

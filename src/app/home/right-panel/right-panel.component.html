@@ -8,7 +8,7 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="info">
       <div class="row">
-        <div class="col-md-12" ng-include src="$ctrl.currentTpl"></div>
+        <div class="col-md-12 volume-info-wrapper" ng-include src="$ctrl.currentTpl"></div>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="yaml">
@@ -157,7 +157,7 @@
 </script>
 <!-- volume details templates -->
 <script type="text/ng-template" id="volume-info.html">
-  <div ng-repeat="volumeItem in $ctrl.templateData">
+  <div ng-repeat="volumeItem in $ctrl.templateData.slice().reverse()" class="volume-info-block">
     <div class="volume-heading">
       <label>Volume {{$index + 1}}</label><i class="delete-icon"></i>
     </div>
