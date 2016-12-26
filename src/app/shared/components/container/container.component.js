@@ -1,5 +1,8 @@
 'use strict';
 
+import { guid } from '../../services'
+
+
 const MAX_VOLUME_STACK = 2;
 const MAX_VOLUME_SIZE = 16;
 const MAX_COLS_PER_ROW = 8;
@@ -11,6 +14,7 @@ class ContainerComponentController {
     this.isDetailsPanelVisible = false;
 
     this.container = {
+      id: guid(),
       name: 'newContainer',
       image: '',
       volumes: [],
@@ -40,6 +44,7 @@ class ContainerComponentController {
     if (data == 'volume') {
       if (prevContainer.volumes.length < MAX_VOLUME_SIZE) {
         prevContainer.volumes.push({
+          id: guid(),
           name: 'new volume',
           readonly: false,
           minsize: 0,
@@ -54,6 +59,7 @@ class ContainerComponentController {
       prevContainer.image = '';
     } else {
       prevContainer.ports.push({
+        id: guid(),
         name: `new ${data}`,
         type: data.indexOf('ext') > -1 ? 'ext' : 'int',
         containerPort: 0,

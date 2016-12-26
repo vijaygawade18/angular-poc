@@ -1,5 +1,7 @@
 'use strict';
 
+import { guid } from '../../services'
+
 const MAX_VOLUME_STACK = 2;
 const MAX_VOLUME_SIZE = 16;
 const MAX_COLS_PER_ROW = 8;
@@ -10,6 +12,7 @@ class VMComponentController {
         this.scope = $scope;
 
         this.vm = {
+            id: guid(),
             name: 'newVM',
             volumes: [],
             ports: []
@@ -32,6 +35,7 @@ class VMComponentController {
         if (data == 'volume') {
             if (prevVM.volumes.length < MAX_VOLUME_SIZE) {
                 prevVM.volumes.push({
+                    id: guid(),
                     name: 'new volume',
                     readonly: false,
                     minsize: 0,
@@ -41,6 +45,7 @@ class VMComponentController {
             }
         } else {
             prevVM.ports.push({
+                id: guid(),
                 name: `new ${data}`,
                 type: data.indexOf('ext') > -1 ? 'ext' : 'int',
                 containerPort: 0,
