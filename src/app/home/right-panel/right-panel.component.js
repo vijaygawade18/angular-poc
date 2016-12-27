@@ -6,6 +6,7 @@ class RightPanelController {
 
   constructor($rootScope) {
     this.isVisible = true;
+    this.$rootScope = $rootScope;
 
     this.currentTpl = '';
     this.templateData = '';
@@ -15,12 +16,13 @@ class RightPanelController {
       let { type, data, isVisible } = args;
       this.isVisible = isVisible;
       if (!this.isVisible) return;
-      //this.templateData = data;
+
       if(!(data instanceof Array)) {
         this.templateData = [ data ];
       } else {
         this.templateData = data;
       }
+    
       this.currentTpl = this.getTemplateByType(type);
       this.yamlData = MOCK_DATA;
     });
@@ -50,8 +52,13 @@ class RightPanelController {
   }
 
   onInformationUpdate(data) {
-    $rootScope.$broadcast('event:showInfoUpdated', data);
+    this.$rootScope.$broadcast('event:showInfoUpdated', data);
   }
+
+  onDeleteInfo(volume, index) {
+    this.$rootScope.$broadcast('event:showInfoDeleted', this.volume = {volume, index});
+  }
+
 }
 
 RightPanelController.$inject = [ '$rootScope' ];
