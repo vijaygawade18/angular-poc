@@ -16,7 +16,8 @@ class TierComponentController {
 
     $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.tier = Object.assign({}, this.tier, data);
-    })
+    });
+
   }
 
   $onInit() {

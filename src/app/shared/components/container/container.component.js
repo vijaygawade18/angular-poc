@@ -26,6 +26,10 @@ class ContainerComponentController {
     $scope.$on('event:showInfoUpdated', (evt, data) => {
       this.container = Object.assign({}, this.container, data);
     })
+    $scope.$on('event:showInfoDeleted', (evt, data) => {
+        this.deleteInfo(data);
+    })
+
   }
 
   $onInit() {
@@ -80,6 +84,14 @@ class ContainerComponentController {
     }
   }
 
+  deleteInfo(data){
+    console.log(data.index);
+    this.container.volumes.splice(data.index,1);
+    this.totalVolumeSize = this.container.volumes.length;
+    if(this.totalVolumeSize == 0){
+      return this.groupedVolumes.length = 0;
+    }
+  }
 
   showVolumeDetails(event) {
     this.isDetailsPanelVisible = true;

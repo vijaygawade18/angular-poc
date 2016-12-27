@@ -55,9 +55,8 @@ class RightPanelController {
     this.$rootScope.$broadcast('event:showInfoUpdated', data);
   }
 
-  onDeleteInfo(data) {
-  console.log(data);
-    this.$rootScope.$broadcast('event:showInfoDeleted', data);
+  onDeleteInfo(volume, index) {
+    this.$rootScope.$broadcast('event:showInfoDeleted', this.volume = {volume, index});
   }
 
 }
