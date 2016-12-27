@@ -6,49 +6,98 @@ import { connectElements } from './connector.service';
 
 class ConnectorController {
 
-    constructor() {
-        this.draw = false;
-    }
+  constructor() {
+    this.draw = false;
+  }
 
-    createPath(svg) {
-        var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        svg.appendChild(path)
-        return path;
-    }
+  createPath(svg) {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.append(path).a
+    return path;
+  }
 
 }
 
 ConnectorController.$inject = []
 
 export const ConnectorDirective = () => {
-    return {
-        restrict: 'A',
-        bindToController: true,
-        controller: ConnectorController,
-        link: function (scope, ele, attrs, ctrl) {
+  return {
+    restrict: 'A',
+    bindToController: true,
+    controller: ConnectorController,
+    link: function (scope, ele, attrs, ctrl) {
 
-            let svg = angular.element(document.querySelector('.connector'));
-            let path = ctrl.createPath(svg[0]);
+      let svg = $('.connector');
+      let svgContainer = $('.middle-section');
 
-            attrs.$observe('draw', (drawConnector = false) => {
-                if (drawConnector == 'true') {
-                  joinElement()
-                }
-            })
+      var tierElements = $(ele).find('.tier-vm-render-area');
 
-            function joinElement(){
+      //bind mouse down event @network
+      let isDrawingStart = false;
+      let startEle, endEle, path;
 
-              // let parentEle = ele[0];
+      $('.middle-section')
+        .on('mousedown', '.tier-wrapper, .network-block, vm', function (e) {
+          if ($(this).hasClass('connected')) {
+            return false;
+          } else {
+            if (!startEle)
+              startEle = this;
+            else
+              endEle = this;
 
-              // let tier = angular.element(parentEle.querySelector('.tier-wrapper'));
-
-              // let network = angular.element(parentEle.querySelector('.network-block'));
-
-              // let svgContainer = angular.element(document.querySelector('.middle-section'))
-
-              // connectElements(svgContainer[0], svg[0], path, network[0], tier[0])
-
+            if (startEle && endEle && startEle != endEle) {
+              callConnectLine(startEle, endEle);
+              startEle = endEle = undefined;
             }
+          }
+        })
+
+      function callConnectLine(startElement, endElement, connectionIndexes) {
+        if (!connectionIndexes) {
+          connectionIndexes = `${$(startElement).index()},${$(endElement).index()}`
         }
+
+        $('path', 'svg.connector').each(function (idx) {
+          if ($(this).attr('id') == connectionIndexes) {
+            $(this).remove();
+          }
+        })
+
+        path = ctrl.createPath(svg);
+        $(path).attr("id", connectionIndexes);
+
+        if ($(startElement).data('type') !== $(endElement).data('type')) {
+          connectElements(svgContainer, svg, path, $(startElement), $(endElement))
+        }
+      }
+
+      const getStartElementByIndex = (idx) => {
+        return $('.network-block').get(idx);
+      }
+
+      const getEndElementByIndex = (idx) => {
+        return $('.tier-wrapper').get(idx);
+      }
+
+      scope.$on('event:redraw', (evt, data) => {
+        let { idx: tierIndex, redraw } = data;
+
+        let startElement;
+        let endElement = getEndElementByIndex(tierIndex - 1);
+
+        let connectedObjectIndexes = $(endElement).attr('connection');
+
+        if (connectedObjectIndexes) {
+          let idx = connectedObjectIndexes.split(',')[0];
+          startElement = getStartElementByIndex(idx);
+
+          if (redraw) {
+            callConnectLine(startElement, endElement, connectedObjectIndexes)
+          }
+        }
+
+      })
     }
+  }
 }

@@ -3,9 +3,10 @@
 import { guid } from '../../services'
 
 class TierComponentController {
-  constructor($scope) {
+  constructor($scope, $rootScope) {
     this.isDetailsPanelVisible = false;
     this.scope = $scope;
+    this.rootScope = $rootScope;
 
     this.tier = {
       id: guid(),
@@ -27,7 +28,7 @@ class TierComponentController {
 
   onDropOverTier(evt, data) {
     let prevObj = this.tier;
-    
+
     if (data == 'container') {
       this.tier.containers.push({
         id: guid(),
@@ -53,6 +54,10 @@ class TierComponentController {
     }
 
     //this.tier = Object.assign({}, this.tier, prevObj);
+  }
+
+  redrawConnector() {
+    this.rootScope.$broadcast('event:redraw', { redraw: true, idx: this.tierIndex })
   }
 
   showDetails(event) {
@@ -86,15 +91,15 @@ class TierComponentController {
   }
 
   stopEventPropogation(event) {
-      if(!!event){
-        event.stopPropagation();
-        event.preventDefault();
-      }
+    if (!!event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
 
 }
 
-TierComponentController.$inject = ['$scope'];
+TierComponentController.$inject = ['$scope', '$rootScope'];
 
 export const TierComponent = {
   bindings: {
